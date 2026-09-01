@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리디북스</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+   <!-- 헤더 시작 -->
+<header>
+
+    <!-- 왼쪽 -->
+    <div class="왼쪽영역">
+
+        <a href="index.html" id="로고">
+            <img src="./img/리디로고.jpg" alt="RIDI">
+        </a>
+
+        <nav id="작품장르">
+
+            <a href="#">만화</a>
+
+            <a href="#">웹툰</a>
+
+            <a href="#">웹소설</a>
+
+            <a href="#" class="현재메뉴">도서</a>
+
+            <a href="#" class="리디샵메뉴">
+                리디샵
+                <span class="new표시헤더">N</span>
+            </a>
+
+            <a href="#">
+                셀렉트
+                <span class="외부링크아이콘">↗</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- 오른쪽 -->
+    <div class="오른쪽영역">
+
+        <!-- 검색 + 로그인 -->
+        <div class="오른쪽위">
+
+            <form id="검색">
+
+                <button
+                    type="submit"
+                    class="검색버튼"
+                    aria-label="검색"
+                >
+                    <span class="돋보기"></span>
+                </button>
+
+                <input type="text">
+
+            </form>
+
+
+            <div id="로그인">
+
+                <a href="#">로그인</a>
+
+                <span>/</span>
+
+                <a href="#">회원가입</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 카테고리 + 캐시충전 -->
+        <div class="오른쪽아래">
+
+            <a href="#" id="전체카테고리">
+
+                <span class="햄버거아이콘">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+
+                <span>전체 카테고리</span>
+
+            </a>
+
+
+            <a href="#" id="캐시충전">
+
+                <span class="캐시아이콘">2X</span>
+
+                <span>캐시충전</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+<!-- 헤더 끝 -->
+
+
+    <!-- 슬라이더 시작 -->
+    <section id="slider">
+
+        <nav id="작품상세장르">
+            <a href="#" class="상세장르메뉴 active">추천</a>
+            <a href="#" class="상세장르메뉴">기획전</a>
+            <a href="#" class="상세장르메뉴">소설</a>
+            <a href="#" class="상세장르메뉴">인문/사회/역사</a>
+            <a href="#" class="상세장르메뉴">경영/경제</a>
+            <a href="#" class="상세장르메뉴">자기계발</a>
+            <a href="#" class="상세장르메뉴">에세이/시</a>
+        </nav>
+
+        <!-- 왼쪽 버튼 -->
+        <button class="슬라이드버튼 이전버튼" type="button">‹</button>
+
+        <!-- 사진이 보이는 영역 -->
+        <div class="사진영역">
+
+            <!-- 실제로 움직이는 트랙 -->
+            <div class="사진트랙">
+
+                <!-- 첫 번째 3장 -->
+                <div class="사진그룹">
+                    <a href="#" class="사진">
+                        <img src="./img/slider1.jpg" alt="작품1">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider2.jpg" alt="작품2">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider3.jpg" alt="작품3">
+                    </a>
+                </div>
+
+
+                <!-- 두 번째 3장 -->
+                <div class="사진그룹">
+                    <a href="#" class="사진">
+                        <img src="./img/slider4.jpg" alt="작품4">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider5.jpg" alt="작품5">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider6.jpg" alt="작품6">
+                    </a>
+                </div>
+
+
+                <!-- 세 번째 3장 -->
+                <div class="사진그룹">
+                    <a href="#" class="사진">
+                        <img src="./img/slider7.jpg" alt="작품7">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider8.jpg" alt="작품8">
+                    </a>
+
+                    <a href="#" class="사진">
+                        <img src="./img/slider9.jpg" alt="작품9">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 오른쪽 버튼 -->
+        <button class="슬라이드버튼 다음버튼" type="button">›</button>
+
+    </section>
+    <!-- 슬라이더 끝 -->
+
+    <section class="동그라미모임">
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘 리디샵아이콘">
+                <span class="오픈줄"></span>
+                <span class="오픈간판">OPEN</span>
+            </div>
+            <span class="동그라미텍스트">리디샵</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="신간아이콘">N</span>
+            </div>
+            <span class="동그라미텍스트">신간</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="베스트아이콘">♔</span>
+            </div>
+            <span class="동그라미텍스트">북스 베스트</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="이벤트아이콘">◇</span>
+            </div>
+            <span class="동그라미텍스트">이벤트</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="리디온리아이콘">R ONLY</span>
+            </div>
+            <span class="동그라미텍스트">리디온리</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="쿠폰아이콘">▣</span>
+            </div>
+            <span class="동그라미텍스트">이달의 쿠폰</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="대여아이콘">대여</span>
+            </div>
+            <span class="동그라미텍스트">대여</span>
+        </a>
+
+
+        <a href="#" class="동그라미링크">
+            <div class="동그라미아이콘">
+                <span class="혜택아이콘">♡</span>
+            </div>
+            <span class="동그라미텍스트">혜택 모아봄</span>
+        </a>
+
+    </section>
+
+
+    <!-- 지금 많이 읽고 있는 만화 -->
+     <section class="유사한구조">
+        <div class="제목1">지금 많이 읽고 있는작품 3</div>
+        <div class="목록영역1">
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                    <div class="작품번호1">1</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+
+            <div class="작품박스1">
+               <a href="#" class="작품이미지1"></a>
+                         <div class="작품번호1">2</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">3</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+               <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">4</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">5</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+             <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">6</div>
+                <a href="#"class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">7</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">8</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                         <div class="작품번호1">9</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+        </div>
+    </section>
+<!--  시발 3번 8번 끝! -->
+
+
+    <!-- 오늘, 리디의 발견 -->
+    <section class="똑같은구조" style="background-color: rgb(252, 1, 1);">
+        <div class="제목2">오늘 리디의 발견 4</div>
+        
+        <div class="작품목록2">
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+        </div>
+    </section>
+
+<!-- 5번 -->
+     <section class="비슷한구조" style="background-color: forestgreen;">
+        <div class="제목2">이벤트</div>
+        <a href="#" class="더보기">더보기</a>
+        <div class="비슷한구조사진">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </section>
+
+<!-- ㅇㅇㄹㄴㄴ어ㅏㅣㅁ어ㅏㅣ머ㅏㅣㄴㅇㄹ
+  -->
+      <section class="유사한구조">
+        <div class="제목1">베스트</div>
+        <div class="목록영역1">
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                    <div class="작품번호1">1</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+
+            <div class="작품박스1">
+               <a href="#" class="작품이미지1"></a>
+                         <div class="작품번호1">2</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">3</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+               <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">4</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">5</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+             <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">6</div>
+                <a href="#"class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">7</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                        <div class="작품번호1">8</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+            <div class="작품박스1">
+                <a href="#" class="작품이미지1"></a>
+                         <div class="작품번호1">9</div>
+               <a href="#" class="작품정보1"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="비슷한구조" style="background-color: forestgreen;">
+        <div class="제목2">지금, 리디에서만! 선 출간 신작</div>
+        
+        <div class="비슷한구조사진">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- 6번 -->
+    <section class="똑같은구조" style="background-color: rgb(252, 1, 1);">
+        <div class="제목2">새로 나온 작품 6</div>
+        <a href="#" class="더보기">더보기</a>
+        <div class="작품목록2">
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+        </div>
+    </section>
+
+
+     <section class="똑같은구조" style="background-color: rgb(252, 1, 1);">
+        <div class="제목2">오디세이랑 함께 보면 좋아요!</div>
+        <a href="#" class="더보기">더보기</a>
+        <div class="작품목록2">
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- 짧지만 강렬한 서사, 우주라이크소설 -->
+  <section class="우주라이크소설">
+
+    <div class="제목2">짧지만 강렬한 서사, 우주라이크소설</div>
+
+    <div class="우주라이크소설목록">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+    </div>
+
+</section>
+
+
+    <section class="똑같은구조" style="background-color: rgb(252, 1, 1);">
+        <div class="제목2">오디세이랑 함께 보면 좋아요!</div>
+        <a href="#" class="더보기">더보기</a>
+        <div class="작품목록2">
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+
+            <div class="작품카드2">
+                <a href="#" class="작품이미지2"></a>
+                <a href="#" class="작품정보2"></a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="리디푸터">
+        <div class="푸터상단">
+            <div class="푸터왼쪽메뉴">
+                <div class="푸터바로가기">
+                    <a href="#" class="푸터큰링크">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 13v-2a8 8 0 0 1 16 0v2"/>
+                            <path d="M4 13H3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v-7H4Z"/>
+                            <path d="M20 13h1a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2v-7h1Z"/>
+                            <path d="M19 20c-1 2-3 3-6 3"/>
+                        </svg>
+                        <span>고객센터</span>
+                    </a>
+
+                    <a href="#" class="푸터큰링크">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 10v4"/>
+                            <path d="M6 9l10-4v14L6 15Z"/>
+                            <path d="M6 15l2 5h3l-2-6"/>
+                            <path d="M19 9v6"/>
+                        </svg>
+                        <span>공지사항</span>
+                    </a>
+                </div>
+
+                <div class="푸터목록">
+                    <strong>서비스</strong>
+                    <a href="#">제휴카드</a>
+                    <a href="#">뷰어 다운로드</a>
+                    <a href="#">CP사이트</a>
+                    <a href="#">리디바탕</a>
+                </div>
+
+                <div class="푸터목록">
+                    <strong>기타 문의</strong>
+                    <a href="#">원고 투고</a>
+                    <a href="#">사업 제휴 문의</a>
+                </div>
+
+                <div class="푸터목록">
+                    <strong>회사</strong>
+                    <a href="#">회사 소개</a>
+                    <a href="#" class="인재채용링크">인재채용 <span class="뉴배지">N</span></a>
+                </div>
+            </div>
+
+            <div class="푸터SNS">
+                <a href="#" aria-label="페이스북" title="페이스북">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-1 .5-1 1-1Z"/></svg>
+                </a>
+                <a href="#" aria-label="인스타그램" title="인스타그램">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="채움"/></svg>
+                </a>
+                <a href="#" aria-label="트위터 X" title="트위터 X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l14 16M19 4L5 20"/></svg>
+                </a>
+                <a href="#" aria-label="유튜브" title="유튜브">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8c-.2-1.5-1-2.5-2.5-2.8C16.8 5 14.5 5 12 5s-4.8 0-6.5.2C4 5.5 3.2 6.5 3 8c-.2 1.1-.2 2.3-.2 4s0 2.9.2 4c.2 1.5 1 2.5 2.5 2.8C7.2 19 9.5 19 12 19s4.8 0 6.5-.2C20 18.5 20.8 17.5 21 16c.2-1.1.2-2.3.2-4s0-2.9-.2-4Z"/><path d="M10 9l5 3-5 3Z" class="채움"/></svg>
+                </a>
+                <a href="#" aria-label="틱톡" title="틱톡">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a4.5 4.5 0 1 1-4-4.5"/><path d="M14 4c1 3 3 4 6 4"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="푸터하단">
+            <button type="button" id="사업자정보버튼" aria-expanded="false">
+                <span>리디(주) 사업자 정보</span>
+                <span class="사업자화살표" aria-hidden="true">⌄</span>
+            </button>
+
+            <div id="사업자정보내용" hidden>
+                <p>대표자 : [대표자명] &nbsp;|&nbsp; 사업자등록번호 : [사업자등록번호]</p>
+                <p>통신판매업 신고번호 : [신고번호] &nbsp;|&nbsp; 주소 : [사업자 주소]</p>
+            </div>
+
+            <div class="푸터약관">
+                <a href="#">이용약관</a>
+                <a href="#" class="개인정보처리방침">개인정보 처리방침</a>
+                <a href="#">청소년보호정책</a>
+                <a href="#">사업자정보확인</a>
+            </div>
+
+            <div class="푸터카피라이트">
+                <span class="저작권기호">©</span>
+                <span>RIDI Corp.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
