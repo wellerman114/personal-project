@@ -420,11 +420,11 @@ header {
 }
 
 .사진영역 {
-    width: 1094px;
+    width: 1140px;
     height: 420px;
     position: absolute;
     top: 50px;
-    left: 23px;
+    left: 0;
     overflow: hidden;
 }
 
@@ -443,17 +443,99 @@ header {
 }
 
 .사진 {
-    width: 360px;
+    width: calc((100% - 14px) / 3);
     height: 420px;
     display: block;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #eaf6ff, #b9dcf5);
+    color: white;
+    text-decoration: none;
+}
+
+/* 슬라이더 책별 배경색 */
+.사진그룹:nth-child(1) .사진:nth-child(1) {
+    background: #b68a55; /* 찰리 멍거 바이블 - 황토색 */
+}
+
+.사진그룹:nth-child(1) .사진:nth-child(2) {
+    background: #76513a; /* 은하영웅전설 - 갈색 */
+}
+
+.사진그룹:nth-child(1)::after {
+    content: "ㅇㅇ";
+    width: calc((100% - 14px) / 3);
+    height: 420px;
+    display: block;
+    flex: 0 0 calc((100% - 14px) / 3);
+    border-radius: 8px;
+    background: #172a46; /* 빈칸 - 남색 */
+}
+
+.사진그룹:nth-child(2) .사진:nth-child(1) {
+    background: #e9a6b9; /* 오만과 편견 - 분홍색 */
+}
+
+.사진그룹:nth-child(2) .사진:nth-child(2) {
+    background: #ffd1dc; /* 교토탐정 홈즈 - 밝은 분홍색 */
+}
+
+.사진그룹:nth-child(2) .사진:nth-child(3) {
+    background: #183b66; /* 치즈 이야기 - 짙은 파랑 */
+}
+
+.사진그룹:nth-child(3) .사진:nth-child(1) {
+    background: #4a2d23; /* 더 골 - 짙은 갈색 */
+}
+
+.사진그룹:nth-child(3) .사진:nth-child(2) {
+    background: #237b79; /* 미스터리 세계사 - 청록색 */
+}
+
+.사진그룹:nth-child(3) .사진:nth-child(3) {
+    background: #152f55; /* 다정한 위선자 - 짙은 파랑 */
 }
 
 .사진 img {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: auto;
+    max-height: 340px;
+    position: absolute;
+    top:50px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.사진 img[hidden] {
+    display: none;
+}
+
+.책정보 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 56px 20px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+}
+
+.책정보 strong,
+.책정보 small {
     display: block;
-    object-fit: cover;
+}
+
+.책정보 strong {
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+.책정보 small {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
 }
 
 .슬라이드버튼 {
@@ -517,13 +599,23 @@ header {
 
     border-radius: 50%;
 
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: #111;
+    color: #3f3f3f;
+}
+
+.동그라미속아이콘 {
+    width: 31px;
+    height: 31px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 
@@ -552,9 +644,52 @@ header {
 
 .리디샵아이콘 {
     position: relative;
-    background-color: #8edbff;
+    background-color: #c9f2ff;
 
     overflow: hidden;
+}
+
+.리디샵상점 {
+    width: 74px;
+    height: 74px;
+}
+
+.원분할.밝은조각 {
+    fill: #b6ebfa;
+}
+
+.원분할.중간조각 {
+    fill: #8fddf4;
+}
+
+.원분할.어두운조각 {
+    fill: #70d0ed;
+}
+
+.간판줄 {
+    fill: none;
+    stroke: #72cce8;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+.오픈간판그룹 {
+    transform: rotate(4deg);
+    transform-origin: 24px 26px;
+}
+
+.오픈표지판 {
+    fill: #ffe600;
+    stroke: #d2ad00;
+    stroke-width: 1.5;
+}
+
+.오픈글자 {
+    fill: #263238;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: -.35px;
 }
 
 
@@ -563,13 +698,17 @@ header {
 .오픈줄 {
     position: absolute;
 
-    top: 7px;
+    top: 5px;
     left: 50%;
 
-    width: 1px;
-    height: 22px;
+    width: 25px;
+    height: 18px;
 
-    background-color: #3280c7;
+    background: transparent;
+    border: 2px solid #56b5df;
+    border-bottom: 0;
+    border-radius: 14px 14px 0 0;
+    box-sizing: border-box;
 
     transform: translateX(-50%);
 }
@@ -580,18 +719,19 @@ header {
 .오픈간판 {
     position: relative;
 
-    padding: 4px 8px;
+    padding: 3px 6px;
 
-    background-color: #ffdc00;
+    background-color: #ffe334;
 
-    border: 2px solid #e2b900;
+    border: 2px solid #f0c900;
+    border-radius: 3px;
 
     color: #222;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
 
-    transform: translateY(6px);
+    transform: translateY(8px);
 }
 
 
@@ -600,30 +740,39 @@ header {
 ========================= */
 
 .신간아이콘 {
-    font-size: 23px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
 }
 
 
 .베스트아이콘 {
-    font-size: 28px;
+    width: 38px;
+    height: 38px;
 }
 
 
 .이벤트아이콘 {
-    font-size: 30px;
-    transform: rotate(-15deg);
+    width: 30px;
+    height: 30px;
+}
+
+.이벤트아이콘 circle {
+    fill: currentColor;
+    stroke: none;
 }
 
 
 .리디온리아이콘 {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
+    letter-spacing: -0.4px;
 }
 
 
 .쿠폰아이콘 {
-    font-size: 25px;
+    width: 29px;
+    height: 29px;
 }
 
 
@@ -634,8 +783,8 @@ header {
 
 
 .혜택아이콘 {
-    font-size: 31px;
-    font-weight: 300;
+    width: 30px;
+    height: 30px;
 }
 
 /* =========================
@@ -699,6 +848,163 @@ header {
     border: 1px solid black;
 }
 
+/* 지금 많이 읽고 있는 작품 */
+.많이읽는작품 {
+    height: 440px;
+    padding-top: 6px;
+}
+
+.많이읽는작품 .제목1 {
+    width: auto;
+    height: 44px;
+    margin: 0;
+    background: transparent;
+    color: #141414;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+.많이읽는작품 .목록영역1 {
+    position: static;
+    flex: 0 0 1140px;
+    grid-template-columns: repeat(3, 380px);
+    grid-template-rows: repeat(3, 120px);
+    row-gap: 8px;
+}
+
+.순위뷰포트 {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 1140px;
+    height: 376px;
+    overflow: hidden;
+}
+
+.순위트랙 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .45s ease;
+}
+
+.순위이동버튼 {
+    position: absolute;
+    top: 238px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+    color: #555;
+    font-size: 32px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.순위이전버튼 { left: -22px; }
+.순위다음버튼 { right: -22px; }
+
+.많이읽는작품 .작품박스1 {
+    width: 380px;
+    gap: 0;
+}
+
+.많이읽는작품 .작품이미지1 {
+    width: 80px;
+    height: 116px;
+    flex: 0 0 80px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 4px;
+    background: #f1f3f5;
+}
+
+.많이읽는작품 .작품이미지1 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.많이읽는작품 .작품번호1 {
+    width: 65px;
+    height: 116px;
+    flex: 0 0 65px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+    color: #202020;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.많이읽는작품 .작품정보1 {
+    width: auto;
+    height: 116px;
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 8px 12px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+}
+
+.많이읽는작품 .작품정보1 a {
+    max-width: 100%;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.많이읽는작품 .작품제목1 {
+    color: #141414;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.많이읽는작품 .작품작가1 {
+    margin-top: 5px;
+    color: #787878;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.많이읽는작품 .작품작가1 span {
+    color: #9b9b9b;
+}
+
+.많이읽는작품 .작품평점1 {
+    margin-top: 5px;
+    color: #fa722e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.많이읽는작품 .작품평점1 em {
+    color: #a5a5a5;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.많이읽는작품 .작품평점1.평점없음 {
+    color: #a5a5a5;
+    font-weight: 400;
+}
+
 /* =========================
    똑같은 구조
 ========================= */
@@ -717,6 +1023,10 @@ header {
     top: 0;
     left: 0;
     background-color: rgb(2, 27, 250);
+}
+
+.제목 {
+    margin-top: 10px;
 }
 
 .더보기 {
@@ -778,6 +1088,267 @@ header {
     text-decoration: none;
 }
 
+.오늘리디발견 {
+    background: #ffffff;
+}
+
+.오늘리디발견 .제목2 {
+    width: auto;
+    background: transparent;
+}
+
+.오늘리디발견 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+}
+
+.오늘리디발견 .작품이미지2 {
+    border-radius: 5px;
+    background: #f1f3f5;
+}
+
+.오늘리디발견 .작품정보2 {
+    padding-top: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    background: transparent;
+    color: #141414;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.오늘리디발견 .작품정보2 span,
+.오늘리디발견 .작품정보2 strong {
+    display: block;
+}
+
+.오늘리디발견 .작품정보2 strong {
+    font-weight: 700;
+}
+
+.새로나온작품 {
+    height: 430px;
+    background: #fff;
+}
+
+.새로나온작품 .제목2 {
+    width: auto;
+    background: transparent;
+}
+
+.새로나온작품 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+}
+
+.새로나온작품 .더보기 {
+    color: #787878;
+    background: transparent;
+    font-size: 13px;
+}
+
+.신작뷰포트 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 1140px;
+    height: 380px;
+    overflow: hidden;
+}
+
+.신작트랙 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform .45s ease;
+}
+
+.새로나온작품 .작품목록2 {
+    position: static;
+    flex: 0 0 1140px;
+    height: 380px;
+}
+
+.새로나온작품 .작품이미지2 {
+    border-radius: 5px;
+    background: #f1f3f5;
+}
+
+.새로나온작품 .작품정보2 {
+    padding-top: 11px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+    background: transparent;
+    line-height: 19px;
+}
+
+.신작제목 {
+    width: 100%;
+    overflow: hidden;
+    color: #141414;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.신작작가 {
+    width: 100%;
+    overflow: hidden;
+    color: #8b8b8b;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.신작평점 {
+    color: #fa722e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.신작평점 em {
+    color: #9b9b9b;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.신작평점없음 {
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+.신작이동버튼 {
+    position: absolute;
+    top: 183px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    color: #555;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+    font-size: 34px;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+.신작이전버튼 { left: -22px; }
+.신작다음버튼 { right: -22px; }
+.신작이동버튼[hidden] { display: none; }
+
+/* 베스트 */
+.베스트작품 { height: 440px; padding-top: 6px; }
+.베스트작품 .제목1 { width: auto; height: 44px; margin: 0; background: transparent; color: #141414; font-size: 22px; line-height: 44px; }
+.베스트뷰포트 { position: absolute; top: 56px; left: 0; width: 1140px; height: 376px; overflow: hidden; }
+.베스트트랙 { width: 100%; height: 100%; display: flex; transition: transform .45s ease; }
+.베스트작품 .목록영역1 { position: static; flex: 0 0 1140px; grid-template-columns: repeat(3, 380px); grid-template-rows: repeat(3, 120px); row-gap: 8px; }
+.베스트작품 .작품박스1 { width: 380px; }
+.베스트작품 .작품이미지1 { width: 80px; height: 116px; flex: 0 0 80px; overflow: hidden; border: 0; border-radius: 4px; background: #f1f3f5; }
+.베스트작품 .작품이미지1 img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.베스트작품 .작품번호1 { width: 65px; height: 116px; flex: 0 0 65px; justify-content: center; align-items: center; background: transparent; font-size: 18px; font-weight: 700; }
+.베스트작품 .작품정보1 { width: auto; height: 116px; min-width: 0; flex: 1; padding: 8px 12px 8px 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box; overflow: hidden; border: 0; background: transparent; color: inherit; text-decoration: none; }
+.베스트작품 .작품제목1 { max-width: 100%; overflow: hidden; color: #141414; font-size: 15px; text-overflow: ellipsis; white-space: nowrap; }
+.베스트작품 .작품작가1 { max-width: 100%; margin-top: 6px; overflow: hidden; color: #888; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.베스트작품 .작품평점1 { margin-top: 5px; color: #fa722e; font-size: 13px; font-weight: 600; }
+.베스트작품 .작품평점1 em { color: #999; font-style: normal; font-weight: 400; }
+.베스트작품 .작품평점없음 { color: #999; font-weight: 400; }
+.베스트이동버튼 { position: absolute; top: 238px; z-index: 10; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(255,255,255,.94); box-shadow: 0 2px 10px rgba(0,0,0,.18); color: #555; font-size: 32px; line-height: 40px; cursor: pointer; }
+.베스트이전버튼 { left: -22px; }
+.베스트다음버튼 { right: -22px; }
+.베스트이동버튼[hidden] { display: none; }
+
+.오디세이추천 {
+    height: 430px;
+    background: #fff;
+}
+
+.오디세이추천 .제목2 {
+    width: auto;
+    background: transparent;
+}
+
+.오디세이추천 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+}
+
+.오디세이추천 .더보기 {
+    color: #787878;
+    background: transparent;
+    font-size: 13px;
+}
+
+.오디세이뷰포트 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 1140px;
+    height: 380px;
+    overflow: hidden;
+}
+
+.오디세이트랙 {
+    width: max-content;
+    height: 380px;
+    display: flex;
+    gap: 12px;
+    transition: transform .45s ease;
+}
+
+.오디세이추천 .작품카드2 {
+    flex: 0 0 180px;
+}
+
+.오디세이추천 .작품이미지2 {
+    border-radius: 5px;
+    background: #f1f3f5;
+}
+
+.오디세이추천 .작품정보2 {
+    padding-top: 11px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+    background: transparent;
+    line-height: 19px;
+}
+
+.오디세이이동버튼 {
+    position: absolute;
+    top: 183px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    color: #555;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+    font-size: 34px;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+.오디세이이전버튼 { left: -22px; }
+.오디세이다음버튼 { right: -22px; }
+.오디세이이동버튼[hidden] { display: none; }
+
 /* =========================
    비슷한 구조 5, 10, 21
 ========================= */
@@ -805,16 +1376,101 @@ header {
     background-color: aliceblue;
 }
 
+.이벤트섹션 {
+    background: #fff;
+}
+
+.이벤트섹션 .제목2 {
+    width: auto;
+    background: transparent;
+}
+
+.이벤트섹션 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+}
+
+.이벤트섹션 .더보기 {
+    color: #787878;
+    background: transparent;
+    font-size: 13px;
+}
+
+.이벤트섹션 .비슷한구조사진 {
+    gap: 15px;
+}
+
+.이벤트섹션 .비슷한구조사진 .이벤트카드 {
+    position: relative;
+    width: 370px;
+    height: 105px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.이벤트카드1 { background: #52677e !important; }
+.이벤트카드2 { background: #d66655 !important; }
+.이벤트카드3 { background: #557c68 !important; }
+
+.이벤트문구 {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    z-index: 2;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.45;
+    transform: translateY(-50%);
+}
+
+.이벤트카드 img {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    width: 58px;
+    height: 95px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+}
+
+.할인문구 {
+    white-space: nowrap;
+}
+
+.할인삼각형 {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0 2px 2px 1px;
+    border-top: 8px solid #fff;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
 /* =========================
    우주라이크소설
 ========================= */
 
 .우주라이크소설 {
     width: 1140px;
-    height: 500px;
+    height: 480px;
     margin: 0 auto 50px;
-    background-color: aqua;
     position: relative;
+}
+
+.우주라이크소설 .제목2 {
+    width: auto;
+    background: transparent;
+}
+
+.우주라이크소설 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .우주라이크소설목록 {
@@ -828,9 +1484,18 @@ header {
 
 .우주라이크소설목록 a {
     width: 220px;
-    height: 450px;
+    height: 430px;
     display: block;
-    background-color: brown;
+    overflow: hidden;
+    background: transparent;
+    text-decoration: none;
+}
+
+.우주라이크소설목록 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill;
 }
 
 /* =========================

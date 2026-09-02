@@ -4,6 +4,81 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    // 지금 많이 읽고 있는 작품 순위 페이지
+    const 순위트랙 = document.querySelector(".순위트랙");
+    const 순위이전버튼 = document.querySelector(".순위이전버튼");
+    const 순위다음버튼 = document.querySelector(".순위다음버튼");
+
+    if (순위트랙 && 순위이전버튼 && 순위다음버튼) {
+        순위다음버튼.addEventListener("click", function () {
+            순위트랙.style.transform = "translateX(-100%)";
+            순위다음버튼.hidden = true;
+            순위이전버튼.hidden = false;
+        });
+
+        순위이전버튼.addEventListener("click", function () {
+            순위트랙.style.transform = "translateX(0)";
+            순위이전버튼.hidden = true;
+            순위다음버튼.hidden = false;
+        });
+    }
+
+    // 새로 나온 작품 두 페이지
+    const 신작트랙 = document.querySelector(".신작트랙");
+    const 신작이전버튼 = document.querySelector(".신작이전버튼");
+    const 신작다음버튼 = document.querySelector(".신작다음버튼");
+
+    if (신작트랙 && 신작이전버튼 && 신작다음버튼) {
+        신작다음버튼.addEventListener("click", function () {
+            신작트랙.style.transform = "translateX(-100%)";
+            신작다음버튼.hidden = true;
+            신작이전버튼.hidden = false;
+        });
+
+        신작이전버튼.addEventListener("click", function () {
+            신작트랙.style.transform = "translateX(0)";
+            신작이전버튼.hidden = true;
+            신작다음버튼.hidden = false;
+        });
+    }
+
+    // 오디세이 추천: 여섯 권을 보여주고 두 칸씩 이동
+    const 오디세이트랙 = document.querySelector(".오디세이트랙");
+    const 오디세이이전버튼 = document.querySelector(".오디세이이전버튼");
+    const 오디세이다음버튼 = document.querySelector(".오디세이다음버튼");
+
+    if (오디세이트랙 && 오디세이이전버튼 && 오디세이다음버튼) {
+        오디세이다음버튼.addEventListener("click", function () {
+            오디세이트랙.style.transform = "translateX(-384px)";
+            오디세이다음버튼.hidden = true;
+            오디세이이전버튼.hidden = false;
+        });
+
+        오디세이이전버튼.addEventListener("click", function () {
+            오디세이트랙.style.transform = "translateX(0)";
+            오디세이이전버튼.hidden = true;
+            오디세이다음버튼.hidden = false;
+        });
+    }
+
+    // 베스트 두 페이지
+    const 베스트트랙 = document.querySelector(".베스트트랙");
+    const 베스트이전버튼 = document.querySelector(".베스트이전버튼");
+    const 베스트다음버튼 = document.querySelector(".베스트다음버튼");
+
+    if (베스트트랙 && 베스트이전버튼 && 베스트다음버튼) {
+        베스트다음버튼.addEventListener("click", function () {
+            베스트트랙.style.transform = "translateX(-100%)";
+            베스트다음버튼.hidden = true;
+            베스트이전버튼.hidden = false;
+        });
+
+        베스트이전버튼.addEventListener("click", function () {
+            베스트트랙.style.transform = "translateX(0)";
+            베스트이전버튼.hidden = true;
+            베스트다음버튼.hidden = false;
+        });
+    }
 
     // =========================
     // 슬라이더
@@ -25,34 +100,52 @@ document.addEventListener("DOMContentLoaded", function () {
         그룹들.length > 0
     ) {
 
-        // 다음 버튼
-        다음버튼.addEventListener("click", function () {
+        const 자동이동간격 = 5000;
+        let 자동이동타이머;
 
-            if (현재슬라이드 < 그룹들.length - 1) {
-                현재슬라이드++;
-            }
-
+        function 슬라이드이동() {
             트랙.style.transform =
                 `translateX(-${현재슬라이드 * 100}%)`;
+        }
 
+        function 다음슬라이드() {
+            현재슬라이드 =
+                (현재슬라이드 + 1) % 그룹들.length;
+
+            슬라이드이동();
+        }
+
+        function 이전슬라이드() {
+            현재슬라이드 =
+                (현재슬라이드 - 1 + 그룹들.length) % 그룹들.length;
+
+            슬라이드이동();
+        }
+
+        function 자동이동시작() {
+            clearInterval(자동이동타이머);
+            자동이동타이머 = setInterval(
+                다음슬라이드,
+                자동이동간격
+            );
+        }
+
+        // 다음 버튼
+        다음버튼.addEventListener("click", function () {
+            다음슬라이드();
+            자동이동시작();
         });
 
 
         // 이전 버튼
         이전버튼.addEventListener("click", function () {
-
-            if (현재슬라이드 > 0) {
-                현재슬라이드--;
-            }
-
-            트랙.style.transform =
-                `translateX(-${현재슬라이드 * 100}%)`;
-
+            이전슬라이드();
+            자동이동시작();
         });
 
+        자동이동시작();
+
     }
-
-
 
     // =========================
     // 슬라이더 작품 상세장르 메뉴
