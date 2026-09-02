@@ -1450,6 +1450,49 @@ header {
     border-left: 5px solid transparent;
 }
 
+/* 슬라이드 화살표의 시각적 중앙 정렬 */
+.슬라이드버튼,
+.순위이동버튼,
+.신작이동버튼,
+.오디세이이동버튼,
+.베스트이동버튼 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 0;
+    line-height: 1;
+}
+
+.이전버튼::before,
+.순위이전버튼::before,
+.신작이전버튼::before,
+.오디세이이전버튼::before,
+.베스트이전버튼::before {
+    content: "‹";
+}
+
+.다음버튼::before,
+.순위다음버튼::before,
+.신작다음버튼::before,
+.오디세이다음버튼::before,
+.베스트다음버튼::before {
+    content: "›";
+}
+
+.슬라이드버튼::before,
+.순위이동버튼::before,
+.신작이동버튼::before,
+.오디세이이동버튼::before,
+.베스트이동버튼::before {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    transform: translateY(-2px);
+}
+
 /* =========================
    우주라이크소설
 ========================= */
