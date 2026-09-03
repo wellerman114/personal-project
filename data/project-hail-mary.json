@@ -1,0 +1,55 @@
+{
+    "book": {
+        "cover": { "src": "./img/project-hail-mary.jpg", "alt": "프로젝트 헤일메리 표지" },
+        "categories": [],
+        "title": "",
+        "rating": "",
+        "ratingCount": "",
+        "interestCount": "",
+        "contributors": [],
+        "publisher": "",
+        "event": "",
+        "purchase": { "regularPrice": "", "salePrice": "" },
+        "detail": {
+            "publishedLabel": "",
+            "published": [],
+            "fileLabel": "",
+            "file": [],
+            "ttsLabel": "",
+            "tts": "",
+            "supportLabel": "",
+            "support": [],
+            "isbnLabel": "",
+            "isbn": ""
+        },
+        "alsoPurchased": { "title": "", "books": [] }
+    },
+    "workInformation": {
+        "introduction": [],
+        "contents": [],
+        "publisherReview": []
+    },
+    "review": {
+        "rating": "",
+        "ratingCount": "",
+        "comments": []
+    },
+    "authorTrilogy": [
+        { "cover": "./img/trilogy1.jpg", "coverAlt": "마션 스페셜 에디션 표지", "title": "마션 (스페셜 에디션)", "author": "앤디 위어, 박아람", "rating": "4.8", "ratingCount": "359" },
+        { "cover": "./img/trilogy2.jpg", "coverAlt": "아르테미스 스페셜 에디션 표지", "title": "아르테미스 (스페셜 에디션)", "author": "앤디 위어, 남명성", "rating": "4.1", "ratingCount": "188" }
+    ],
+    "relatedWorks": [
+        { "cover": "./img/related1.jpg", "coverAlt": "문예춘추사 셜록 홈즈 전집 세트 표지", "title": "문예춘추사 셜록 홈즈 전집 세트 (전 10권)", "author": "아서 코난 도일, 박상은", "rating": "4.6", "ratingCount": "1,530" },
+        { "cover": "./img/related2.jpg", "coverAlt": "천 개의 파랑 표지", "title": "천 개의 파랑", "author": "천선란", "rating": "4.7", "ratingCount": "1,903" },
+        { "cover": "./img/related3.jpg", "coverAlt": "나는 절대 저렇게 추하게 늙지 말아야지 표지", "title": "나는 절대 저렇게 추하게 늙지 말아야지", "author": "심너울", "rating": "4.4", "ratingCount": "345" },
+        { "cover": "./img/related4.jpg", "coverAlt": "블랙 에코 표지", "title": "블랙 에코", "author": "마이클 코넬리, 김승욱", "rating": "4.6", "ratingCount": "105" },
+        { "cover": "./img/related5.jpg", "coverAlt": "세상의 마지막 기차역 표지", "title": "세상의 마지막 기차역", "author": "무라세 다케시, 김지연", "rating": "4.5", "ratingCount": "500" },
+        { "cover": "./img/related6.jpg", "coverAlt": "류츠신 삼체 3부작 1권 표지", "title": "개정판 | 류츠신 삼체 3부작 1권", "author": "류츠신", "rating": "4.6", "ratingCount": "445" },
+        { "cover": "./img/related7.jpg", "coverAlt": "기억 전달자 표지", "title": "기억 전달자", "author": "로이스 로리, 장은수", "rating": "4.5", "ratingCount": "258" },
+        { "cover": "./img/related8.jpg", "coverAlt": "아이언 플레임 1 표지", "title": "아이언 플레임 1", "author": "레베카 야로스, 이수현", "rating": "4.9", "ratingCount": "47" },
+        { "cover": "./img/related9.jpg", "coverAlt": "시화공단 지구방위대 표지", "title": "시화공단 지구방위대", "author": "이서영", "rating": "4.6", "ratingCount": "41" },
+        { "cover": "./img/related10.jpg", "coverAlt": "토막 난 우주를 안고서 표지", "title": "토막 난 우주를 안고서", "author": "김초엽 외 4명", "rating": "4.2", "ratingCount": "85" },
+        { "cover": "./img/related11.jpg", "coverAlt": "아르테미스 스페셜 에디션 표지", "title": "아르테미스 (스페셜 에디션)", "author": "앤디 위어, 남명성", "rating": "4.1", "ratingCount": "188" },
+        { "cover": "./img/related12.jpg", "coverAlt": "멋진 신세계 표지", "title": "멋진 신세계", "author": "올더스 헉슬리", "rating": "4.3", "ratingCount": "376" }
+    ]
+}

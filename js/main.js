@@ -80,6 +80,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // 선 출간 신작: 세 권을 보여주고 마지막 두 권까지 두 칸 이동
+    const 선출간트랙 = document.querySelector(".선출간트랙");
+    const 선출간이전버튼 = document.querySelector(".선출간이전버튼");
+    const 선출간다음버튼 = document.querySelector(".선출간다음버튼");
+
+    if (선출간트랙 && 선출간이전버튼 && 선출간다음버튼) {
+        선출간다음버튼.addEventListener("click", function () {
+            선출간트랙.style.transform = "translateX(-770px)";
+            선출간다음버튼.hidden = true;
+            선출간이전버튼.hidden = false;
+        });
+
+        선출간이전버튼.addEventListener("click", function () {
+            선출간트랙.style.transform = "translateX(0)";
+            선출간이전버튼.hidden = true;
+            선출간다음버튼.hidden = false;
+        });
+    }
+
     // =========================
     // 슬라이더
     // =========================

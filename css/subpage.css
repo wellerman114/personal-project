@@ -1,0 +1,637 @@
+@charset "utf-8";
+
+/* =========================
+   프로젝트 헤일메리 서브페이지
+========================= */
+
+body {
+    margin: 0;
+    color: #303538;
+    background: #fff;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+.서브페이지메인 {
+    width: 1140px;
+    min-height: 570px;
+    margin: 0 auto;
+    padding: 42px 0 70px;
+    box-sizing: border-box;
+}
+
+.책정보 {
+    width: 100%;
+    background: lightcyan;
+}
+
+/* 표지 / 기본정보 / 함께 구매 영역 */
+.책정보상단 {
+    display: grid;
+    grid-template-columns: 270px 630px 200px;
+    column-gap: 20px;
+    align-items: start;
+}
+
+/* 왼쪽 책 표지 */
+.책표지영역 {
+    width: 270px;
+    min-height: 407px;
+    background: transparent;
+}
+
+.책표지링크 {
+    width: 245px;
+    height: 352px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #555;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.책표지 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* 가운데 도서 기본 정보 */
+.책기본정보 {
+    min-height: 407px;
+    position: relative;
+    padding-top: 5px;
+    box-sizing: border-box;
+    background: beige;
+}
+
+.책카테고리 {
+    min-height: 18px;
+    margin-bottom: 14px;
+    color: #808991;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.책제목 {
+    min-height: 38px;
+    margin: 0 0 12px;
+    color: #141414;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.책평점영역 {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.책평점 {
+    color: #fa722e;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.책평가수,
+.책관심수 {
+    color: #7f878e;
+    font-size: 12px;
+}
+
+.책관심수 {
+    min-height: 18px;
+    margin-top: 7px;
+}
+
+.책관계자목록 {
+    min-height: 42px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+    color: #333;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.책관계자목록 li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.책관계자역할,
+.책관계자목록 small {
+    color: #8a9299;
+    font-size: 11px;
+}
+
+.책출판사 {
+    min-height: 20px;
+    margin-top: 5px;
+    color: #555;
+    font-size: 13px;
+}
+
+.책이벤트 {
+    width: 100%;
+    min-height: 42px;
+    margin-top: 19px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e5e8;
+    border-radius: 0;
+    color: #444;
+    background: lightblue;
+    font-size: 12px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* 오른쪽 함께 구매한 작품 */
+.함께구매영역 {
+    min-height: 405px;
+    padding-left: 20px;
+    border-left: 1px solid #e6e8eb;
+    box-sizing: border-box;
+    background: lightpink;
+}
+
+.함께구매제목 {
+    min-height: 24px;
+    margin: 2px 0 14px;
+    color: #303538;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.함께구매목록 {
+    margin: 0;
+    padding-left: 24px;
+    color: #777;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.함께구매목록 li {
+    padding-left: 4px;
+    overflow: hidden;
+    color: #555;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 책정보 하단 */
+.책정보하단 {
+    width: 920px;
+    min-height: 100px;
+    margin: 34px 0 0;
+    padding: 20px 24px;
+    border: 1px solid #e7e9eb;
+    border-radius: 3px;
+    background: lightskyblue;
+    box-sizing: border-box;
+}
+
+.책상세목록 {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 36px;
+    row-gap: 10px;
+}
+
+.책상세목록 > div {
+    min-height: 18px;
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 12px;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+.책상세목록 dt {
+    color: #444;
+    font-weight: 700;
+}
+
+.책상세목록 dd {
+    margin: 0;
+    color: #7e868d;
+    white-space: pre-line;
+}
+
+/* =========================
+   책정보 아래 공통 섹션
+========================= */
+
+.작품정보,
+.작가정보,
+.작가대표작품,
+.리뷰영역,
+.연관작품영역 {
+    width: 920px;
+    margin-top: 58px;
+}
+
+.작품정보 {
+    min-height: 390px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: bisque;
+}
+
+.작품정보 > .상세섹션제목,
+.작품정보 > .작품정보탭 {
+    grid-column: 1 / -1;
+}
+
+.작가정보 {
+    min-height: 320px;
+    background: lightgreen;
+}
+
+.작가대표작품 {
+    min-height: 320px;
+    background: plum;
+}
+
+.리뷰영역 {
+    min-height: 420px;
+    background: lightyellow;
+}
+
+.연관작품영역 {
+    min-height: 330px;
+    background: lightcyan;
+}
+
+/* 비동기 데이터 입력 전에도 각 공간의 크기를 확인할 수 있는 표시 */
+.책카테고리:empty,
+.책제목:empty,
+.책평점:empty,
+.책평가수:empty,
+.책관심수:empty,
+.책관계자목록:empty,
+.책출판사:empty,
+.책이벤트:empty,
+.함께구매제목:empty,
+.함께구매목록:empty,
+.출간정보내용:empty,
+.파일정보내용:empty,
+.듣기기능내용:empty,
+.지원환경내용:empty,
+.isbn내용:empty {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.책카테고리:empty { width: 180px; }
+.책제목:empty { width: 330px; }
+.책평점:empty { width: 55px; height: 16px; }
+.책평가수:empty { width: 65px; height: 16px; }
+.책관심수:empty { width: 85px; }
+.책출판사:empty { width: 190px; }
+.책이벤트:empty { display: block; }
+.함께구매제목:empty { width: 130px; }
+.함께구매목록:empty { height: 250px; }
+
+.작품정보패널:empty,
+.작가프로필영역:empty,
+.대표작품목록:empty,
+.댓글목록:empty,
+.연관작품목록:empty {
+    border: 0;
+    background: transparent;
+}
+
+.상세섹션머리 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.상세섹션머리 > a {
+    color: #777;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.상세섹션제목 {
+    margin: 0 0 16px;
+    color: #222;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+/* 작품 소개 / 목차 / 출판사 서평 */
+.작품정보탭,
+.작가탭 {
+    display: grid;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #ddd;
+}
+
+.작품정보탭 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.작가탭 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.작품정보탭 span,
+.작가탭 button {
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #555;
+    border-right: 1px solid #e4e6e8;
+    color: #222;
+    background: lightblue;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.작품정보탭 span:last-child,
+.작가탭 button:last-child {
+    border-right: 0;
+}
+
+.작가탭 button.활성 {
+    color: #222;
+    background: #fff;
+    font-weight: 700;
+}
+
+.작품정보패널 {
+    min-height: 280px;
+    padding: 20px;
+    display: block;
+    border: 1px solid #555;
+    border-top: 0;
+    color: #222;
+    font-size: 14px;
+    line-height: 1.85;
+    box-sizing: border-box;
+}
+
+#작품소개 { background: lightyellow; }
+#목차 { background: lightgreen; }
+#출판사서평 { background: lightsalmon; }
+
+.작품정보패널 p {
+    margin: 0 0 18px;
+    white-space: pre-line;
+}
+
+.작품정보패널 ol {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.작품정보패널 li {
+    margin-bottom: 8px;
+}
+
+/* 작가 및 작가 대표작품의 빈 구조 */
+.작가프로필영역 {
+    min-height: 190px;
+    padding: 28px 0;
+    box-sizing: border-box;
+}
+
+.대표작품목록,
+.연관작품목록 {
+    min-height: 245px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    border-top: 1px solid #ddd;
+    padding-top: 22px;
+    box-sizing: border-box;
+}
+
+.서브도서카드 {
+    width: 100%;
+    min-width: 0;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.서브도서표지링크 {
+    width: 100%;
+    height: 235px;
+    display: block;
+    overflow: hidden;
+    background: gray;
+    text-decoration: none;
+}
+
+.서브도서표지 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.서브도서정보 {
+    padding-top: 9px;
+}
+
+.서브도서제목,
+.서브도서작가,
+.서브도서평점 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.서브도서제목 {
+    color: #222;
+    font-size: 14px;
+}
+
+.서브도서작가 {
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+.서브도서평점 {
+    margin-top: 5px;
+    color: #fa722e;
+    font-size: 12px;
+}
+
+/* 리뷰 및 비동기 댓글 */
+.리뷰요약 {
+    min-height: 105px;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #e4e6e8;
+    box-sizing: border-box;
+}
+
+.리뷰평점 {
+    color: #222;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.리뷰평가수 {
+    color: #888;
+    font-size: 12px;
+}
+
+.댓글정렬 {
+    padding: 18px 0 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.댓글정렬 button {
+    padding: 6px 9px;
+    border: 1px solid #dfe2e5;
+    border-radius: 3px;
+    color: #777;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.댓글정렬 button.활성 {
+    color: #1e9eff;
+    border-color: #1e9eff;
+}
+
+.댓글목록 {
+    min-height: 140px;
+    border-top: 1px solid #e4e6e8;
+}
+
+.댓글카드 {
+    padding: 20px 4px;
+    border-bottom: 1px solid #eceeef;
+}
+
+.댓글윗줄 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.댓글별점 {
+    color: #fa722e;
+    font-size: 12px;
+}
+
+.댓글작성자 {
+    color: #555;
+    font-size: 12px;
+}
+
+.댓글날짜 {
+    margin-left: auto;
+    color: #999;
+    font-size: 11px;
+}
+
+.댓글내용 {
+    margin: 12px 0 0;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.댓글더보기버튼 {
+    width: 100%;
+    height: 42px;
+    margin-top: 15px;
+    border: 1px solid #dfe2e5;
+    border-radius: 3px;
+    color: #555;
+    background: #fff;
+    cursor: pointer;
+}
+
+.댓글더보기버튼[hidden] {
+    display: none;
+}
+
+.데이터호출실패::before {
+    content: "데이터 파일을 불러오지 못했습니다. Live Server 실행 여부와 JSON 경로를 확인하세요.";
+    display: block;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid #f1b8b8;
+    border-radius: 4px;
+    color: #b63232;
+    background: #fff5f5;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .서브페이지메인 {
+        width: calc(100% - 32px);
+    }
+
+    .책정보상단 {
+        grid-template-columns: 180px 1fr;
+        gap: 24px;
+    }
+
+    .책표지영역 {
+        width: 180px;
+    }
+
+    .책표지링크 {
+        width: 170px;
+    }
+
+    .책표지링크 {
+        height: 245px;
+    }
+
+    .함께구매영역 {
+        grid-column: 1 / -1;
+        min-height: 0;
+        margin-top: 30px;
+        padding: 22px 0 0;
+        border-top: 1px solid #e6e8eb;
+        border-left: 0;
+    }
+
+    .책정보하단 {
+        width: 100%;
+    }
+
+    .작품정보,
+    .작가정보,
+    .작가대표작품,
+    .리뷰영역,
+    .연관작품영역 {
+        width: 100%;
+    }
+
+    .대표작품목록,
+    .연관작품목록 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

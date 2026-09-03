@@ -1,353 +1,5 @@
 @charset "utf-8";
 
-/* =========================
-   헤더
-========================= */
-
-/* =========================
-   헤더
-========================= */
-
-header {
-    width: 1140px;
-    height: 115px;
-
-    margin: 0 auto;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-
-/* =========================
-   왼쪽 영역
-========================= */
-
-.왼쪽영역 {
-    height: 115px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-/* RIDI 로고 */
-
-#로고 {
-    width: 75px;
-    height: 35px;
-
-    margin-top: 18px;
-
-    display: block;
-}
-
-
-#로고 img {
-    width: 75px;
-    height: 35px;
-
-    display: block;
-    object-fit: contain;
-}
-
-
-/* =========================
-   작품 장르
-========================= */
-
-#작품장르 {
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 25px;
-}
-
-
-#작품장르 a {
-    position: relative;
-
-    color: #111;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-    white-space: nowrap;
-
-    transition: color 0.2s;
-}
-
-
-#작품장르 a:hover {
-    color: #999;
-}
-
-
-/* 현재 선택된 '도서' */
-
-#작품장르 .현재메뉴 {
-    color: #1e9eff;
-}
-
-
-/* 리디샵 옆 N */
-
-.리디샵메뉴 {
-    display: flex;
-    align-items: flex-start;
-}
-
-
-.new표시헤더 {
-    margin-left: 2px;
-    margin-top: -5px;
-
-    color: #ff3b30;
-
-    font-size: 8px;
-    font-weight: bold;
-}
-
-
-/* 셀렉트 외부링크 표시 */
-
-.외부링크아이콘 {
-    margin-left: 2px;
-
-    font-size: 11px;
-}
-
-
-/* =========================
-   오른쪽 영역
-========================= */
-
-.오른쪽영역 {
-    height: 115px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-
-/* =========================
-   검색 + 로그인
-========================= */
-
-.오른쪽위 {
-    margin-top: 18px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 28px;
-}
-
-
-/* 검색창 */
-
-#검색 {
-    width: 325px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-
-    background-color: #f5f5f5;
-
-    border: none;
-    border-radius: 9px;
-
-    overflow: hidden;
-}
-
-
-/* 검색 버튼 */
-
-.검색버튼 {
-    width: 45px;
-    height: 42px;
-
-    border: none;
-    background: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-}
-
-
-/* CSS 돋보기 */
-
-.돋보기 {
-    width: 14px;
-    height: 14px;
-
-    border: 2px solid #aaa;
-    border-radius: 50%;
-
-    position: relative;
-
-    display: block;
-}
-
-
-.돋보기::after {
-    content: "";
-
-    width: 7px;
-    height: 2px;
-
-    position: absolute;
-
-    right: -6px;
-    bottom: -3px;
-
-    background-color: #aaa;
-
-    transform: rotate(45deg);
-}
-
-
-/* 검색 입력 */
-
-#검색 input {
-    flex: 1;
-
-    height: 42px;
-
-    padding: 0 12px 0 3px;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   로그인
-========================= */
-
-#로그인 {
-    display: flex;
-    align-items: center;
-
-    gap: 3px;
-
-    white-space: nowrap;
-}
-
-
-#로그인 a,
-#로그인 span {
-    color: #666;
-
-    font-size: 13px;
-    font-weight: 500;
-
-    text-decoration: none;
-}
-
-
-#로그인 a:hover {
-    color: #aaa;
-}
-
-
-/* =========================
-   전체 카테고리 + 캐시충전
-========================= */
-
-.오른쪽아래 {
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 28px;
-}
-
-
-#전체카테고리,
-#캐시충전 {
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    color: #111;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-}
-
-
-/* 햄버거 */
-
-.햄버거아이콘 {
-    width: 20px;
-    height: 15px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-.햄버거아이콘 i {
-    width: 20px;
-    height: 2px;
-
-    display: block;
-
-    background-color: #222;
-}
-
-
-/* =========================
-   캐시 2X 아이콘
-========================= */
-
-.캐시아이콘 {
-    width: 25px;
-    height: 25px;
-
-    border: none;
-    border-radius: 50%;
-
-    background-color: #ffbe32;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-
-    font-size: 9px;
-    font-weight: bold;
-}
-
-
-#전체카테고리:hover,
-#캐시충전:hover {
-    color: #888;
-}
 
 /* =========================
    슬라이더
@@ -464,14 +116,55 @@ header {
     background: #76513a; /* 은하영웅전설 - 갈색 */
 }
 
-.사진그룹:nth-child(1)::after {
-    content: "ㅇㅇ";
-    width: calc((100% - 14px) / 3);
-    height: 420px;
+/* 월간 리뷰 텍스트 카드 */
+.월간리뷰카드 {
+    position: relative;
+    padding: 18px 24px 28px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1c4d68 !important;
+    color: #fff;
+    text-align: center;
+}
+
+.월간리뷰제목 {
+    width: 150px;
+    margin-top: 58px;
+    padding: 10px 0 12px;
+    border-top: 2px solid rgba(255, 255, 255, 0.85);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+    font-family: serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.월간리뷰제목 span,
+.월간리뷰제목 strong {
     display: block;
-    flex: 0 0 calc((100% - 14px) / 3);
-    border-radius: 8px;
-    background: #172a46; /* 빈칸 - 남색 */
+    font-weight: 400;
+}
+
+.월간리뷰내용 {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.월간리뷰내용 strong {
+    display: block;
+    font-size: 21px;
+}
+
+.월간리뷰내용 span {
+    display: block;
+    margin-top: 7px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
 }
 
 .사진그룹:nth-child(2) .사진:nth-child(1) {
@@ -1350,7 +1043,7 @@ header {
 .오디세이이동버튼[hidden] { display: none; }
 
 /* =========================
-   비슷한 구조 5, 10, 21
+   비슷한 구조 5
 ========================= */
 
 .비슷한구조 {
@@ -1450,12 +1143,116 @@ header {
     border-left: 5px solid transparent;
 }
 
+/* 지금, 리디에서만! 선 출간 신작 */
+.선출간신작 {
+    height: 350px;
+    background: #fff;
+}
+
+.선출간신작 .제목2 {
+    width: auto;
+    background: transparent;
+    text-align: center;
+}
+
+.선출간신작 .제목 {
+    margin: 8px 0 0;
+    color: #141414;
+    font-size: 22px;
+}
+
+.선출간뷰포트 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 1140px;
+    padding-top: 35px;
+    overflow: hidden;
+}
+
+.선출간트랙 {
+    display: flex;
+    width: max-content;
+    gap: 15px;
+    transition: transform .35s ease;
+}
+
+.선출간카드 {
+    width: 370px;
+    color: #141414;
+    text-decoration: none;
+}
+
+.선출간이미지영역 {
+    position: relative;
+    width: 370px;
+    height: 145px;
+    border-radius: 5px;
+}
+
+.선출간이미지영역 img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 120px;
+    height: auto;
+    max-height: 180px;
+    transform: translateX(-50%);
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+}
+
+.선출간색1 { background: #43a7a0; }
+.선출간색2 { background: greenyellow; }
+.선출간색3 { background: #87509c; }
+.선출간색4 { background: #263b68; }
+.선출간색5 { background: #4d8c59; }
+
+.선출간설명,
+.선출간제목 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.선출간설명 {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.선출간제목 {
+    margin-top: 6px;
+    color: #888;
+    font-size: 13px;
+}
+
+.선출간이동버튼 {
+    position: absolute;
+    top: 135px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+    color: #555;
+    cursor: pointer;
+}
+
+.선출간이전버튼 { left: -22px; }
+.선출간다음버튼 { right: -22px; }
+.선출간이동버튼[hidden] { display: none; }
+
 /* 슬라이드 화살표의 시각적 중앙 정렬 */
 .슬라이드버튼,
 .순위이동버튼,
 .신작이동버튼,
 .오디세이이동버튼,
-.베스트이동버튼 {
+.베스트이동버튼,
+.선출간이동버튼 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1468,7 +1265,8 @@ header {
 .순위이전버튼::before,
 .신작이전버튼::before,
 .오디세이이전버튼::before,
-.베스트이전버튼::before {
+.베스트이전버튼::before,
+.선출간이전버튼::before {
     content: "‹";
 }
 
@@ -1476,7 +1274,8 @@ header {
 .순위다음버튼::before,
 .신작다음버튼::before,
 .오디세이다음버튼::before,
-.베스트다음버튼::before {
+.베스트다음버튼::before,
+.선출간다음버튼::before {
     content: "›";
 }
 
@@ -1484,7 +1283,8 @@ header {
 .순위이동버튼::before,
 .신작이동버튼::before,
 .오디세이이동버튼::before,
-.베스트이동버튼::before {
+.베스트이동버튼::before,
+.선출간이동버튼::before {
     display: block;
     font-family: Arial, sans-serif;
     font-size: 32px;
@@ -1569,223 +1369,3 @@ header {
     text-decoration: none;
 }
 
-/* =========================
-   리디 푸터 - 통합본
-========================= */
-.리디푸터 {
-    width: 1140px;
-    min-height: 345px;
-    height: auto;
-    margin: 0 auto;
-    padding: 42px 0 36px;
-    border-top: 1px solid #eeeeee;
-    color: #777777;
-    background: #ffffff;
-    box-sizing: border-box;
-}
-
-.푸터상단 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.푸터왼쪽메뉴 {
-    display: flex;
-    align-items: flex-start;
-    gap: 82px;
-}
-
-.푸터바로가기 {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.푸터큰링크 {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: #666666;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: color .2s ease;
-}
-
-.푸터큰링크 svg {
-    width: 26px;
-    height: 26px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    flex: 0 0 auto;
-}
-
-.푸터큰링크:hover {
-    color: #b8b8b8;
-}
-
-.푸터목록 {
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 14px;
-}
-
-.푸터목록 strong {
-    margin-bottom: 7px;
-    color: #666666;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.푸터목록 a {
-    width: fit-content;
-    color: #777777;
-    text-decoration: none;
-    transition: color .2s ease;
-}
-
-.푸터목록 a:hover {
-    color: #bbbbbb;
-}
-
-.인재채용링크 {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.뉴배지 {
-    width: 16px;
-    height: 16px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background: #1e9eff;
-    color: #ffffff;
-    font-size: 9px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.푸터SNS {
-    display: flex;
-    gap: 10px;
-}
-
-.푸터SNS a {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #e2e2e2;
-    border-radius: 50%;
-    color: #777777;
-    text-decoration: none;
-    transition: color .2s ease, border-color .2s ease;
-}
-
-.푸터SNS a:hover {
-    color: #b8b8b8;
-    border-color: #eeeeee;
-}
-
-.푸터SNS svg {
-    width: 19px;
-    height: 19px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.푸터SNS svg .채움 {
-    fill: currentColor;
-    stroke: none;
-}
-
-.푸터SNS a:first-child svg path:first-child {
-    fill: currentColor;
-    stroke: none;
-}
-
-.푸터하단 {
-    margin-top: 70px;
-}
-
-#사업자정보버튼 {
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    border: 0;
-    background: transparent;
-    color: #666666;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.사업자화살표 {
-    display: inline-block;
-    font-size: 16px;
-    transform-origin: center;
-    transition: transform .2s ease;
-}
-
-#사업자정보버튼[aria-expanded="true"] .사업자화살표 {
-    transform: rotate(180deg);
-}
-
-#사업자정보내용 {
-    margin-top: 10px;
-    color: #999999;
-    font-size: 11px;
-    line-height: 1.7;
-}
-
-.푸터약관 {
-    margin-top: 14px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-}
-
-.푸터약관 a {
-    color: #8a8a8a;
-    font-size: 12px;
-    text-decoration: none;
-    transition: color .2s ease;
-}
-
-.푸터약관 a:hover {
-    color: #bcbcbc;
-}
-
-.푸터약관 .개인정보처리방침 {
-    color: #555555;
-    font-weight: 700;
-}
-
-.푸터카피라이트 {
-    margin-top: 22px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #777777;
-    font-size: 12px;
-}
-
-.저작권기호 {
-    font-size: 14px;
-    line-height: 1;
-}
