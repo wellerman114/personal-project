@@ -7,7 +7,7 @@
 body {
     margin: 0;
     color: #303538;
-    background: #fff;
+
     font-family: Arial, "Noto Sans KR", sans-serif;
 }
 
@@ -16,12 +16,42 @@ body {
     min-height: 570px;
     margin: 0 auto;
     padding: 42px 0 70px;
+    position: relative;
     box-sizing: border-box;
+}
+
+/* 헤더에서 푸터 경계까지 이어지는 오른쪽 영역 세로선 */
+.서브페이지메인::after {
+    content: "";
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 940px;
+    z-index: 2;
+    background: #d8dde3;
+    pointer-events: none;
+}
+
+/* 세로선과 맞닿는 헤더 전체 하단 가로선 */
+body.서브페이지 {
+    position: relative;
+}
+
+body.서브페이지::before {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 115px;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: #d8dde3;
+    pointer-events: none;
 }
 
 .책정보 {
     width: 100%;
-    background: lightcyan;
 }
 
 /* 표지 / 기본정보 / 함께 구매 영역 */
@@ -60,21 +90,56 @@ body {
     object-fit: cover;
 }
 
+.미리보기버튼 {
+    width: 245px;
+    height: 44px;
+    margin: 12px auto 0;
+    display: block;
+    border: 1px solid #d8dde3;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* 가운데 도서 기본 정보 */
 .책기본정보 {
     min-height: 407px;
     position: relative;
     padding-top: 5px;
     box-sizing: border-box;
-    background: beige;
+
 }
 
 .책카테고리 {
     min-height: 18px;
     margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     color: #808991;
     font-size: 12px;
     line-height: 18px;
+}
+
+.책카테고리 a {
+    color: #808991;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.책카테고리 a:hover {
+    color: #b5bbc0;
+}
+
+.카테고리구분자 {
+    color: #9ba2a8;
+}
+
+.카테고리세로선 {
+    color: #cbd0d4;
 }
 
 .책제목 {
@@ -91,6 +156,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+    vertical-align: middle;
 }
 
 .책평점 {
@@ -101,7 +167,11 @@ body {
 
 .책평가수,
 .책관심수 {
-    color: #7f878e;
+    min-height: 20px;
+    margin: 0 0 0 10px;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
     font-size: 12px;
 }
 
@@ -114,8 +184,10 @@ body {
     min-height: 42px;
     margin: 18px 0 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
     list-style: none;
-    color: #333;
     font-size: 13px;
     line-height: 21px;
 }
@@ -123,7 +195,7 @@ body {
 .책관계자목록 li {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 5px;
 }
 
 .책관계자역할,
@@ -134,91 +206,106 @@ body {
 
 .책출판사 {
     min-height: 20px;
-    margin-top: 5px;
+    margin-top: 8px;
     color: #555;
     font-size: 13px;
 }
 
-.책이벤트 {
-    width: 100%;
-    min-height: 42px;
-    margin-top: 19px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    border: 1px solid #e2e5e8;
-    border-radius: 0;
-    color: #444;
-    background: lightblue;
-    font-size: 12px;
-    text-decoration: none;
-    box-sizing: border-box;
-}
 
 /* 오른쪽 함께 구매한 작품 */
 .함께구매영역 {
     min-height: 405px;
     padding-left: 20px;
-    border-left: 1px solid #e6e8eb;
+    border-left: 0;
     box-sizing: border-box;
-    background: lightpink;
+    background: transparent;
 }
 
 .함께구매제목 {
     min-height: 24px;
-    margin: 2px 0 14px;
-    color: #303538;
-    font-size: 15px;
+    margin: 2px 0 16px;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 24px;
+}
+
+.함께구매제목 a {
+    color: #17191c;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.함께구매제목 a:hover {
+    color: #626970;
 }
 
 .함께구매목록 {
     margin: 0;
-    padding-left: 24px;
-    color: #777;
-    font-size: 12px;
-    line-height: 25px;
+    padding-left: 25px;
+    color: #f47a20;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 27px;
 }
 
 .함께구매목록 li {
     padding-left: 4px;
+    color: #f47a20;
+}
+
+.함께구매목록 li::marker {
+    color: #f47a20;
+    font-weight: 700;
+}
+
+.함께구매목록 a {
+    display: block;
     overflow: hidden;
-    color: #555;
+    color: #626970;
+    font-weight: 400;
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.함께구매목록 a:hover {
+    color: #9aa1a7;
 }
 
 /* 책정보 하단 */
 .책정보하단 {
     width: 920px;
-    min-height: 100px;
+    min-height: 200px;
     margin: 34px 0 0;
     padding: 20px 24px;
     border: 1px solid #e7e9eb;
     border-radius: 3px;
-    background: lightskyblue;
+    background: #f7f8f9;
     box-sizing: border-box;
 }
 
 .책상세목록 {
+    min-height: 158px;
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 36px;
-    row-gap: 10px;
+    row-gap: 18px;
+    align-content: space-between;
 }
 
 .책상세목록 > div {
-    min-height: 18px;
+    min-height: 22px;
     display: grid;
     grid-template-columns: 78px 1fr;
     gap: 12px;
-    font-size: 11px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 22px;
 }
 
 .책상세목록 dt {
-    color: #444;
+    color: #111;
     font-weight: 700;
 }
 
@@ -226,6 +313,41 @@ body {
     margin: 0;
     color: #7e868d;
     white-space: pre-line;
+}
+
+.듣기기능내용,
+.지원환경내용 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* 듣기 기능 라벨과 헤드폰·문구를 같은 가로선에 맞춤 */
+.듣기기능내용 {
+    min-height: 22px;
+    align-self: start;
+}
+
+.상세정보아이콘항목 {
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.상세정보아이콘 {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* =========================
@@ -243,34 +365,28 @@ body {
 
 .작품정보 {
     min-height: 390px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background: bisque;
-}
-
-.작품정보 > .상세섹션제목,
-.작품정보 > .작품정보탭 {
-    grid-column: 1 / -1;
+    display: block;
+    background: transparent;
 }
 
 .작가정보 {
     min-height: 320px;
-    background: lightgreen;
+    background: transparent;
 }
 
 .작가대표작품 {
     min-height: 320px;
-    background: plum;
+    background: transparent;
 }
 
 .리뷰영역 {
     min-height: 420px;
-    background: lightyellow;
+    background: transparent;
 }
 
 .연관작품영역 {
     min-height: 330px;
-    background: lightcyan;
+    background: transparent;
 }
 
 /* 비동기 데이터 입력 전에도 각 공간의 크기를 확인할 수 있는 표시 */
@@ -313,6 +429,251 @@ body {
     background: transparent;
 }
 
+/* =========================
+   도서 기본 정보 재배치
+========================= */
+
+/* 평점과 관심 수 */
+.책평점영역 {
+    min-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    vertical-align: middle;
+}
+
+.책관심수 {
+    min-height: 20px;
+    margin: 0 0 0 10px;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+/* 작가와 번역자 */
+.책관계자목록 {
+    min-height: 21px;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    list-style: none;
+}
+
+.책관계자목록 li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.책관계자목록 a {
+    color: #555d64;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.책관계자목록 a:hover {
+    color: #92999f;
+}
+
+/* 작가 정보 아래 출판사 */
+.책출판사 {
+    min-height: 20px;
+    margin-top: 8px;
+    color: #555;
+    font-size: 13px;
+}
+
+/*
+   구매 영역 배치
+   1행: 관심 버튼
+   2행: 소장 가격 박스
+   3행: 하트 / 카트 / 선물 / 소장 버튼
+*/
+.책구매영역 {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr 44px 44px 44px 300px;
+    gap: 8px;
+}
+
+/* 내부 버튼을 책구매영역의 그리드 항목으로 사용 */
+.책구매버튼영역 {
+    display: contents;
+}
+
+/* 출판사 아래 새 관심 버튼 */
+.관심등록버튼 {
+    width: 80px;
+    height: 35px;
+    padding: 0 14px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #1e9eff;
+    border-radius: 25px;
+    color: #1e9eff;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 관심 버튼 아래 소장 가격 박스 */
+.책가격정보 {
+    min-height: 82px;
+    margin-top: 39px;
+    padding: 0;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    column-gap: 0;
+    align-items: stretch;
+    border: 1px solid #e2e5e8;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+/* 가격 박스 왼쪽 소장 문구 */
+.가격구분 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e2e5e8;
+    color: #141414;
+    background: #f7f8f9;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 22px;
+}
+
+/* 가격 박스 오른쪽 가격 목록 */
+.가격목록 {
+    margin: 0;
+    padding: 15px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.가격목록 > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.가격목록 dt {
+    color: #808991;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/* 가격을 박스 오른쪽 끝에 정렬 */
+.가격목록 dd {
+    margin: 0;
+    color: #303538;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    line-height: 18px;
+}
+
+/* 판매가 강조 */
+.가격목록 .판매가격 {
+    color: #1e9eff;
+    font-weight: 700;
+}
+
+/* 가격 박스 아래 구매 버튼 무리 */
+.하트버튼,
+.카트버튼,
+.선물버튼,
+.소장버튼 {
+    height: 50px;
+    margin-top: 6px;
+    grid-row: 3;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.하트버튼 {
+    width: 50px;
+    grid-column: 2;
+    border: 1px solid #d8dde3;
+    color: #808991;
+    background: #fff;
+}
+
+.카트버튼 {
+    width: 50px;
+    grid-column: 3;
+    border: 1px solid #d8dde3;
+    background: #fff;
+}
+
+.선물버튼 {
+    width: 50px;
+    grid-column: 4;
+    border: 1px solid #d8dde3;
+    background: #fff;
+}
+
+.소장버튼 {
+    width: 300px;
+    grid-column: 5;
+    border: 1px solid #1e9eff;
+    color: #fff;
+    background: #1e9eff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* 하트, 카트, 선물 버튼의 공통 SVG 아이콘 */
+.구매아이콘 {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.하트버튼,
+.카트버튼,
+.선물버튼 {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #687078;
+}
+
+.하트아이콘 {
+    width: 25px;
+    height: 25px;
+}
+
+.카트아이콘,
+.선물아이콘 {
+    width: 26px;
+    height: 26px;
+}
+
 .상세섹션머리 {
     display: flex;
     justify-content: space-between;
@@ -337,7 +698,7 @@ body {
 .작가탭 {
     display: grid;
     border-top: 1px solid #bbb;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0;
 }
 
 .작품정보탭 {
@@ -348,26 +709,30 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.작품정보탭 span,
-.작가탭 button {
-    height: 46px;
+.작품정보탭버튼,
+.작가정보탭버튼 {
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #555;
-    border-right: 1px solid #e4e6e8;
-    color: #222;
-    background: lightblue;
-    font-size: 13px;
+    color: #596168;
+    font-size: 17px;
     box-sizing: border-box;
 }
 
-.작품정보탭 span:last-child,
-.작가탭 button:last-child {
-    border-right: 0;
+.작품정보탭버튼,
+.작가정보탭버튼 {
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    background: #f7f8f9;
+    font-family: inherit;
+    cursor: pointer;
 }
 
-.작가탭 button.활성 {
+.작품정보탭버튼.활성,
+.작가정보탭버튼.활성 {
+    border-bottom-color: transparent;
     color: #222;
     background: #fff;
     font-weight: 700;
@@ -375,39 +740,219 @@ body {
 
 .작품정보패널 {
     min-height: 280px;
-    padding: 20px;
+    padding: 30px 32px;
     display: block;
-    border: 1px solid #555;
-    border-top: 0;
+    border: 0;
     color: #222;
+    background: #fff;
     font-size: 14px;
     line-height: 1.85;
     box-sizing: border-box;
 }
 
-#작품소개 { background: lightyellow; }
-#목차 { background: lightgreen; }
-#출판사서평 { background: lightsalmon; }
+.작품정보:not(.펼침) .작품정보패널.활성,
+.작가정보.소개선택:not(.펼침) .작가소개패널.활성 {
+    max-height: 330px;
+    position: relative;
+    overflow: hidden;
+}
 
-.작품정보패널 p {
+.작품정보:not(.펼침) .작품정보패널.활성::after,
+.작가정보.소개선택:not(.펼침) .작가소개패널.활성::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 88%);
+    pointer-events: none;
+}
+
+.작품정보패널[hidden] {
+    display: none;
+}
+
+.작가정보패널 {
+    min-height: 280px;
+    padding: 30px 32px;
+    display: block;
+    border: 0;
+    color: #222;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.85;
+    box-sizing: border-box;
+}
+
+.작가정보패널[hidden],
+.작가소개더보기버튼[hidden] {
+    display: none;
+}
+
+.작품정보패널 p,
+.작가정보패널 p {
     margin: 0 0 18px;
     white-space: pre-line;
 }
 
 .작품정보패널 ol {
     margin: 0;
-    padding-left: 24px;
+    padding-left: 0;
+    list-style: none;
 }
 
 .작품정보패널 li {
     margin-bottom: 8px;
 }
 
+.작품정보더보기버튼,
+.작가소개더보기버튼,
+.댓글더보기버튼 {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d8dde3;
+    border-radius: 4px;
+    color: #303538;
+    background: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.작품정보더보기아이콘,
+.작가소개더보기아이콘,
+.댓글더보기아이콘 {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.작품정보.펼침 .작품정보더보기아이콘,
+.작가정보.펼침 .작가소개더보기아이콘,
+.리뷰영역.펼침 .댓글더보기아이콘 {
+    transform: rotate(180deg);
+}
+
+.작품정보더보기버튼:hover,
+.작가소개더보기버튼:hover,
+.댓글더보기버튼:hover {
+    background: #f7f8f9;
+}
+
 /* 작가 및 작가 대표작품의 빈 구조 */
 .작가프로필영역 {
     min-height: 190px;
-    padding: 28px 0;
     box-sizing: border-box;
+}
+
+.프로필역할탭 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.프로필역할버튼 {
+    min-width: 68px;
+    height: 35px;
+    padding: 0 16px;
+    border: 1px solid #b7bdc3;
+    border-radius: 25px;
+    color: #858c93;
+    background: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.프로필역할버튼.활성 {
+    border-color: #222;
+    color: #fff;
+    background: #222;
+}
+
+.프로필내용 {
+    margin-top: 25px;
+}
+
+.프로필이름영역 {
+    margin: 0 0 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    line-height: 1.4;
+}
+
+.프로필이름 {
+    color: #25292d;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a.프로필이름:hover {
+    color: #626970;
+}
+
+.프로필영문이름 {
+    color: #969da4;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.프로필영문이름:empty {
+    display: none;
+}
+
+.프로필상세목록 {
+    margin: 0;
+    display: grid;
+    gap: 9px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.프로필상세행 {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 10px;
+}
+
+.프로필상세행 dt {
+    color: #9aa1a8;
+}
+
+.프로필상세행 dd {
+    margin: 0;
+    color: #626970;
+    white-space: pre-line;
+}
+
+.프로필링크목록 a {
+    color: #3f79a8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.프로필링크목록 a:hover {
+    color: #82a8c7;
+}
+
+.프로필링크구분자 {
+    color: #a4abb1;
 }
 
 .대표작품목록,
@@ -419,6 +964,73 @@ body {
     border-top: 1px solid #ddd;
     padding-top: 22px;
     box-sizing: border-box;
+}
+
+.연관작품슬라이더 {
+    position: relative;
+}
+
+.연관작품뷰포트 {
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.연관작품목록 {
+    display: flex;
+    grid-template-columns: none;
+    border-top: 0;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.연관작품목록 .서브도서카드 {
+    width: calc((100% - 56px) / 5);
+    flex: 0 0 calc((100% - 56px) / 5);
+}
+
+.연관작품이동버튼 {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 140px;
+    z-index: 2;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d8dde1;
+    border-radius: 50%;
+    color: #555d64;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.연관작품이동버튼[hidden] {
+    display: none;
+}
+
+.연관작품이전버튼 {
+    left: -21px;
+}
+
+.연관작품다음버튼 {
+    right: -21px;
+}
+
+.연관작품이동버튼 svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.연관작품이동버튼:hover {
+    color: #92999f;
+    background: #fff;
 }
 
 .서브도서카드 {
@@ -477,98 +1089,369 @@ body {
 
 /* 리뷰 및 비동기 댓글 */
 .리뷰요약 {
-    min-height: 105px;
-    padding: 24px 0;
+    min-height: 112px;
+    padding: 22px 4px 28px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    border-top: 1px solid #bbb;
     border-bottom: 1px solid #e4e6e8;
     box-sizing: border-box;
 }
 
+.리뷰평점묶음 {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
 .리뷰평점 {
-    color: #222;
-    font-size: 34px;
+    color: #111;
+    font-size: 48px;
+    font-weight: 700;
     line-height: 1;
 }
 
+.리뷰평점설명 {
+    display: grid;
+    gap: 5px;
+}
+
+.리뷰평점설명 > strong {
+    color: #222;
+    font-size: 14px;
+}
+
+.리뷰요약별점 .별점표시 {
+    gap: 2px;
+    font-size: 21px;
+}
+
+.리뷰평가정보 {
+    margin-left: auto;
+    display: grid;
+    justify-items: end;
+    gap: 5px;
+}
+
 .리뷰평가수 {
-    color: #888;
-    font-size: 12px;
+    color: #858c93;
+    font-size: 14px;
+}
+
+.별점분포버튼 {
+    padding: 0;
+    border: 0;
+    color: #737b82;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.별점분포버튼 span {
+    color: #9da3a8;
+    font-size: 10px;
+}
+
+.별점표시 {
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: -1px;
+}
+
+.채운별 {
+    color: #f05252;
+}
+
+.빈별 {
+    color: #e3e6e8;
+}
+
+.리뷰작성영역 {
+    padding: 38px 0 34px;
+}
+
+.리뷰평가안내 {
+    margin: 0;
+    color: #969da4;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.리뷰별점입력 {
+    margin: 22px 0 38px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.리뷰별점입력 button {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    color: #e3e6e8;
+    background: transparent;
+    font-size: 50px;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.리뷰별점입력 button.선택 {
+    color: #f05252;
+}
+
+.리뷰입력박스 {
+    min-height: 150px;
+    padding: 17px 18px 16px;
+    border: 1px solid #dfe3e6;
+    border-radius: 6px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.리뷰입력창 {
+    width: 100%;
+    height: 82px;
+    padding: 0;
+    display: block;
+    border: 0;
+    outline: 0;
+    color: #3e4449;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.65;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.리뷰입력창::placeholder {
+    color: #9ba2a8;
+}
+
+.리뷰입력아랫줄 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.스포일러선택 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #7f878e;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.스포일러선택 input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.스포일러체크표시 {
+    width: 19px;
+    height: 19px;
+    border: 1px solid #cbd0d4;
+    border-radius: 50%;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.스포일러선택 input:checked + .스포일러체크표시 {
+    border: 5px solid #222;
+}
+
+.리뷰등록버튼 {
+    width: 92px;
+    height: 36px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    background: #222;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.리뷰등록버튼:disabled {
+    color: #f5f5f5;
+    background: #cfd2d4;
+    cursor: default;
+}
+
+.리뷰유의사항버튼 {
+    margin-top: 11px;
+    padding: 0;
+    border: 0;
+    color: #687078;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.리뷰종류탭 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 2px solid #777;
+}
+
+.리뷰종류탭 button {
+    height: 60px;
+    border: 0;
+    border-bottom: 1px solid #d7dadd;
+    color: #a0a6ab;
+    background: #f7f7f7;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.리뷰종류탭 button + button {
+    border-left: 1px solid #d7dadd;
+}
+
+.리뷰종류탭 button.활성 {
+    border-bottom-color: transparent;
+    color: #111;
+    background: #fff;
 }
 
 .댓글정렬 {
-    padding: 18px 0 12px;
+    padding: 15px 0 18px;
     display: flex;
-    justify-content: flex-end;
-    gap: 6px;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
 .댓글정렬 button {
-    padding: 6px 9px;
-    border: 1px solid #dfe2e5;
-    border-radius: 3px;
-    color: #777;
-    background: #fff;
-    font-size: 11px;
+    min-width: 66px;
+    height: 38px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 20px;
+    color: #858c93;
+    background: #f5f5f5;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
 }
 
 .댓글정렬 button.활성 {
-    color: #1e9eff;
-    border-color: #1e9eff;
+    color: #fff;
+    background: #111;
 }
 
 .댓글목록 {
     min-height: 140px;
-    border-top: 1px solid #e4e6e8;
 }
 
 .댓글카드 {
-    padding: 20px 4px;
+    padding: 23px 0 25px;
     border-bottom: 1px solid #eceeef;
 }
 
-.댓글윗줄 {
+.댓글별점 {
+    font-size: 14px;
+}
+
+.댓글내용 {
+    margin: 8px 0 12px;
+    color: #30363b;
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-line;
+}
+
+.댓글사용자줄 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.댓글구매자표시 {
+    padding: 1px 4px;
+    border: 1px solid #d5d9dc;
+    border-radius: 2px;
+    color: #9aa1a7;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.댓글작성자 {
+    color: #858c93;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.댓글아랫줄 {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.댓글메타정보 {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.댓글별점 {
-    color: #fa722e;
-    font-size: 12px;
-}
-
-.댓글작성자 {
-    color: #555;
-    font-size: 12px;
-}
-
 .댓글날짜 {
-    margin-left: auto;
-    color: #999;
-    font-size: 11px;
+    color: #9aa1a7;
+    font-size: 12px;
 }
 
-.댓글내용 {
-    margin: 12px 0 0;
-    color: #444;
-    font-size: 13px;
-    line-height: 1.7;
-    white-space: pre-line;
+.댓글관리버튼 {
+    padding: 0;
+    border: 0;
+    color: #9aa1a7;
+    background: transparent;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.댓글반응버튼영역 {
+    display: flex;
+    gap: 7px;
+}
+
+.댓글반응버튼 {
+    min-width: 68px;
+    height: 34px;
+    padding: 0 11px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid #e0e3e5;
+    border-radius: 4px;
+    color: #7e868d;
+    background: #fff;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.추천버튼 svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .댓글더보기버튼 {
-    width: 100%;
-    height: 42px;
     margin-top: 15px;
-    border: 1px solid #dfe2e5;
-    border-radius: 3px;
-    color: #555;
-    background: #fff;
-    cursor: pointer;
 }
 
 .댓글더보기버튼[hidden] {
@@ -588,6 +1471,10 @@ body {
 }
 
 @media (max-width: 900px) {
+    .서브페이지메인::after {
+        display: none;
+    }
+
     .서브페이지메인 {
         width: calc(100% - 32px);
     }

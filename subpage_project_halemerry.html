@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 헤일메리 - 리디</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="./css/common.css">
 </head>
-<body>
+<body class="서브페이지">
    <!-- 헤더 시작 -->
         <header>
             <!-- 왼쪽 -->
@@ -104,9 +105,13 @@
 
                         <div class="책출판사"></div>
 
-                        <a href="#" class="책이벤트"></a>
 
                         <div class="책구매영역">
+                            <button type="button" class="관심등록버튼">
+                                <span aria-hidden="true">+</span>
+                                <span>관심</span>
+                            </button>
+
                             <div class="책가격정보">
                                 <strong class="가격구분">소장</strong>
                                 <dl class="가격목록">
@@ -122,9 +127,28 @@
                             </div>
 
                             <div class="책구매버튼영역">
-                                <button type="button" class="관심버튼" aria-label="관심 작품">♡</button>
-                                <button type="button" class="카트버튼" aria-label="카트에 담기">🛒</button>
-                                <button type="button" class="선물버튼" aria-label="선물하기">□</button>
+                                <button type="button" class="하트버튼" aria-label="관심 작품">
+                                    <svg class="구매아이콘 하트아이콘" viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M16 27S5 20.2 5 11.8C5 7.8 7.7 5 11.3 5c2.1 0 3.8 1 4.7 2.6C16.9 6 18.6 5 20.7 5 24.3 5 27 7.8 27 11.8 27 20.2 16 27 16 27Z"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="카트버튼" aria-label="카트에 담기">
+                                    <svg class="구매아이콘 카트아이콘" viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M3 5h4l3 15h15l3-11H8"/>
+                                        <path d="M10 14h17M18 9v11"/>
+                                        <path d="M12 20v4M24 20v4"/>
+                                        <circle cx="12" cy="27" r="1.5"/>
+                                        <circle cx="24" cy="27" r="1.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="선물버튼" aria-label="선물하기">
+                                    <svg class="구매아이콘 선물아이콘" viewBox="0 0 32 32" aria-hidden="true">
+                                        <path d="M5 13h22v14H5Z"/>
+                                        <path d="M3.5 9h25v6h-25Z"/>
+                                        <path d="M16 9v18"/>
+                                        <path d="M16 9c-5 0-7-1.5-7-4 0-1.6 1.2-2.5 2.7-2.5C14.2 2.5 16 6 16 9Zm0 0c5 0 7-1.5 7-4 0-1.6-1.2-2.5-2.7-2.5C17.8 2.5 16 6 16 9Z"/>
+                                    </svg>
+                                </button>
                                 <button type="button" class="소장버튼">소장</button>
                             </div>
                         </div>
@@ -141,27 +165,27 @@
                 <div class="책정보하단">
                     <dl class="책상세목록">
                         <div>
-                            <dt class="출간정보라벨"></dt>
+                            <dt class="출간정보라벨">출간 정보</dt>
                             <dd class="출간정보내용"></dd>
                         </div>
 
                         <div>
-                            <dt class="파일정보라벨"></dt>
-                            <dd class="파일정보내용"></dd>
-                        </div>
-
-                        <div>
-                            <dt class="듣기기능라벨"></dt>
+                            <dt class="듣기기능라벨">듣기 기능</dt>
                             <dd class="듣기기능내용"></dd>
                         </div>
 
                         <div>
-                            <dt class="지원환경라벨"></dt>
+                            <dt class="파일정보라벨">파일 정보</dt>
+                            <dd class="파일정보내용"></dd>
+                        </div>
+
+                        <div>
+                            <dt class="지원환경라벨">지원환경</dt>
                             <dd class="지원환경내용"></dd>
                         </div>
 
                         <div>
-                            <dt class="isbn라벨"></dt>
+                            <dt class="isbn라벨">ISBN</dt>
                             <dd class="isbn내용"></dd>
                         </div>
                     </dl>
@@ -170,44 +194,109 @@
 
             <!-- 작품 정보: 내용은 JSON에서 비동기로 출력 -->
             <section class="작품정보">
+                <h2 style="color: rgb(105, 104, 104);">프로젝트 헤일메리</h2>
                 <h2 class="상세섹션제목">작품 정보</h2>
 
-                <nav class="작품정보탭" aria-label="작품 정보 메뉴">
-                    <span>작품 소개</span>
-                    <span>목차</span>
-                    <span>출판사 서평</span>
+                <nav class="작품정보탭" aria-label="작품 정보 메뉴" role="tablist">
+                    <button type="button" class="작품정보탭버튼 활성" data-panel="작품소개" role="tab" aria-selected="true" aria-controls="작품소개">작품 소개</button>
+                    <button type="button" class="작품정보탭버튼" data-panel="목차" role="tab" aria-selected="false" aria-controls="목차">목차</button>
+                    <button type="button" class="작품정보탭버튼" data-panel="출판사서평" role="tab" aria-selected="false" aria-controls="출판사서평">출판사 서평</button>
                 </nav>
 
-                <article id="작품소개" class="작품정보패널"></article>
-                <article id="목차" class="작품정보패널"></article>
-                <article id="출판사서평" class="작품정보패널"></article>
+                <article id="작품소개" class="작품정보패널 활성" role="tabpanel"></article>
+                <article id="목차" class="작품정보패널" role="tabpanel" hidden></article>
+                <article id="출판사서평" class="작품정보패널" role="tabpanel" hidden></article>
+
+                <button type="button" class="작품정보더보기버튼" aria-expanded="false" aria-controls="작품소개">
+                    <span class="작품정보더보기문구">더보기</span>
+                    <svg class="작품정보더보기아이콘" viewBox="0 0 20 20" aria-hidden="true">
+                        <polyline points="2,7 10,12 18,7"></polyline>
+                    </svg>
+                </button>
             </section>
 
-            <!-- 작가 영역: 추후 HTML에 직접 입력 -->
+            <!-- 작가 영역 -->
             <section class="작가정보">
                 <h2 class="상세섹션제목">작가</h2>
-                <div class="작가탭">
-                    <button type="button" class="활성">작가 프로필</button>
-                    <button type="button">작가 소개</button>
-                </div>
-                <div class="작가프로필영역"></div>
+                <nav class="작가탭" aria-label="작가 정보 메뉴" role="tablist">
+                    <button type="button" class="작가정보탭버튼 활성" data-panel="작가프로필" role="tab" aria-selected="true" aria-controls="작가프로필">작가 프로필</button>
+                    <button type="button" class="작가정보탭버튼" data-panel="작가소개" role="tab" aria-selected="false" aria-controls="작가소개">작가 소개</button>
+                </nav>
+
+                <article id="작가프로필" class="작가정보패널 활성" role="tabpanel">
+                    <div class="작가프로필영역"></div>
+                </article>
+                <article id="작가소개" class="작가정보패널 작가소개패널" role="tabpanel" hidden></article>
+
+                <button type="button" class="작가소개더보기버튼" aria-expanded="false" aria-controls="작가소개" hidden>
+                    <span class="작가소개더보기문구">더보기</span>
+                    <svg class="작가소개더보기아이콘" viewBox="0 0 20 20" aria-hidden="true">
+                        <polyline points="2,7 10,12 18,7"></polyline>
+                    </svg>
+                </button>
             </section>
 
-             <!-- 리뷰 요약은 고정 구조, 댓글만 JSON에서 비동기로 출력 -->
+            <!-- 리뷰 UI는 고정 구조, 평점과 리뷰 데이터는 JSON에서 비동기로 출력 -->
             <section class="리뷰영역">
                 <h2 class="상세섹션제목">리뷰</h2>
+
                 <div class="리뷰요약">
-                    <strong class="리뷰평점"></strong>
-                    <span class="리뷰평가수"></span>
+                    <div class="리뷰평점묶음">
+                        <strong class="리뷰평점"></strong>
+                        <div class="리뷰평점설명">
+                            <strong>구매자 별점</strong>
+                            <span class="리뷰요약별점" aria-label="구매자 별점"></span>
+                        </div>
+                    </div>
+                    <div class="리뷰평가정보">
+                        <span class="리뷰평가수"></span>
+                        <button type="button" class="별점분포버튼">별점 분포 보기 <span aria-hidden="true">▼</span></button>
+                    </div>
                 </div>
+
+                <div class="리뷰작성영역">
+                    <p class="리뷰평가안내">이 작품을 평가해 주세요!</p>
+                    <div class="리뷰별점입력" aria-label="별점 선택">
+                        <button type="button" data-rating="1" aria-label="1점">★</button>
+                        <button type="button" data-rating="2" aria-label="2점">★</button>
+                        <button type="button" data-rating="3" aria-label="3점">★</button>
+                        <button type="button" data-rating="4" aria-label="4점">★</button>
+                        <button type="button" data-rating="5" aria-label="5점">★</button>
+                    </div>
+
+                    <div class="리뷰입력박스">
+                        <textarea class="리뷰입력창" maxlength="1000" placeholder="리뷰를 10자 이상 입력해 주세요. 광고 및 욕설, 타인을 비방하는 문구는 비공개될 수 있습니다."></textarea>
+                        <div class="리뷰입력아랫줄">
+                            <label class="스포일러선택">
+                                <input type="checkbox">
+                                <span class="스포일러체크표시" aria-hidden="true"></span>
+                                <span>스포일러가 있습니다.</span>
+                            </label>
+                            <button type="button" class="리뷰등록버튼" disabled>리뷰 등록</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="리뷰유의사항버튼">리뷰 작성 유의사항</button>
+                </div>
+
+                <div class="리뷰종류탭" role="tablist" aria-label="리뷰 종류">
+                    <button type="button" class="활성" data-review-type="buyer" role="tab" aria-selected="true">구매자 <strong class="구매자리뷰수"></strong></button>
+                    <button type="button" data-review-type="all" role="tab" aria-selected="false">전체 <strong class="전체리뷰수"></strong></button>
+                </div>
+
                 <div class="댓글정렬">
                     <button type="button" class="활성">최신순</button>
                     <button type="button">공감순</button>
                     <button type="button">별점 높은순</button>
                     <button type="button">별점 낮은순</button>
                 </div>
-                <div class="댓글목록"></div>
-                <button type="button" class="댓글더보기버튼" hidden>더보기</button>
+                <div id="댓글목록" class="댓글목록"></div>
+                <button type="button" class="댓글더보기버튼" aria-expanded="false" aria-controls="댓글목록" hidden>
+                    <span class="댓글더보기문구">더보기</span>
+                    <svg class="댓글더보기아이콘" viewBox="0 0 20 20" aria-hidden="true">
+                        <polyline points="2,7 10,12 18,7"></polyline>
+                    </svg>
+                </button>
             </section>
 
 
@@ -221,13 +310,23 @@
             </section>
 
            
-            <!-- 하단 추천 영역: 추후 HTML에 직접 입력 -->
+            <!-- 함께 구매한 작품: JSON에서 5권씩 비동기로 출력 -->
             <section class="연관작품영역">
                 <div class="상세섹션머리">
                     <h2 class="상세섹션제목">함께 구매한 작품</h2>
                     <a href="#">더보기</a>
                 </div>
-                <div class="연관작품목록"></div>
+                <div class="연관작품슬라이더">
+                    <button type="button" class="연관작품이동버튼 연관작품이전버튼" aria-label="이전 작품 보기" hidden>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15,4 7,12 15,20"></polyline></svg>
+                    </button>
+                    <div class="연관작품뷰포트">
+                        <div class="연관작품목록" aria-live="polite"></div>
+                    </div>
+                    <button type="button" class="연관작품이동버튼 연관작품다음버튼" aria-label="다음 작품 보기" hidden>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9,4 17,12 9,20"></polyline></svg>
+                    </button>
+                </div>
             </section>
         </main>
 

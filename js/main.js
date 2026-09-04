@@ -2,7 +2,49 @@
 // 페이지 로드 후 실행
 // =========================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+
+    try {
+        // 섹션별로 정리된 도서 정보 JSON 요청
+        const 응답 = await fetch("./data/main-books.json");
+
+        if (!응답.ok) {
+            throw new Error(`도서 정보 요청 실패: ${응답.status}`);
+        }
+
+        const 도서정보 = await 응답.json();
+        const 도서텍스트 = {};
+
+        // 각 섹션의 texts 객체를 주입에 사용할 하나의 조회 객체로 합치기
+        Object.values(도서정보).forEach(function (섹션) {
+            if (섹션 && typeof 섹션 === "object" && 섹션.texts) {
+                Object.assign(도서텍스트, 섹션.texts);
+            }
+        });
+
+        // HTML 구조를 바꾸지 않고 async-book 주석 위치에 도서 텍스트만 삽입
+        const 주석탐색기 = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_COMMENT
+        );
+        const 도서정보위치 = [];
+
+        while (주석탐색기.nextNode()) {
+            if (주석탐색기.currentNode.nodeValue.trim().startsWith("async-book:")) {
+                도서정보위치.push(주석탐색기.currentNode);
+            }
+        }
+
+        도서정보위치.forEach(function (주석) {
+            const 키 = 주석.nodeValue.trim().replace("async-book:", "").trim();
+
+            if (Object.hasOwn(도서텍스트, 키)) {
+                주석.replaceWith(document.createTextNode(도서텍스트[키]));
+            }
+        });
+    } catch (오류) {
+        console.error("메인 도서 정보를 불러오지 못했습니다.", 오류);
+    }
 
     // 지금 많이 읽고 있는 작품 순위 페이지
     const 순위트랙 = document.querySelector(".순위트랙");
