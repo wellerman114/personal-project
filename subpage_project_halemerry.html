@@ -17,15 +17,15 @@
                 </a>
 
                 <nav id="작품장르">
-                    <a href="#">만화</a>
-                    <a href="#">웹툰</a>
-                    <a href="#">웹소설</a>
-                    <a href="#" class="현재메뉴">도서</a>
-                    <a href="#" class="리디샵메뉴">
+                    <a href="index.html">만화</a>
+                    <a href="index.html">웹툰</a>
+                    <a href="index.html">웹소설</a>
+                    <a href="index.html" class="현재메뉴">도서</a>
+                    <a href="index.html" class="리디샵메뉴">
                         리디샵
                         <span class="new표시헤더">N</span>
                     </a>
-                    <a href="#">
+                    <a href="index.html">
                         셀렉트
                         <span class="외부링크아이콘">↗</span>
                     </a>
@@ -48,15 +48,15 @@
                     </form>
 
                     <div id="로그인">
-                        <a href="#">로그인</a>
+                        <a href="index.html">로그인</a>
                         <span>/</span>
-                        <a href="#">회원가입</a>
+                        <a href="index.html">회원가입</a>
                     </div>
                 </div>
 
                 <!-- 카테고리 + 캐시충전 -->
                 <div class="오른쪽아래">
-                    <a href="#" id="전체카테고리">
+                    <a href="index.html" id="전체카테고리">
                         <span class="햄버거아이콘">
                             <i></i>
                             <i></i>
@@ -65,7 +65,7 @@
                         <span>전체 카테고리</span>
                     </a>
 
-                    <a href="#" id="캐시충전">
+                    <a href="index.html" id="캐시충전">
                         <span class="캐시아이콘">2X</span>
                         <span>캐시충전</span>
                     </a>
@@ -81,8 +81,8 @@
 
                     <!-- 왼쪽 표지 영역 -->
                     <div class="책표지영역">
-                        <a href="#" class="책표지링크">
-                            <img class="책표지" src="" alt="">
+                        <a href="index.html" class="책표지링크">
+                            <img class="책표지" src="./img/ranking10.jpg" alt="프로젝트 헤일메리 표지">
                         </a>
 
                         <button class="미리보기버튼" type="button">미리보기</button>
@@ -197,15 +197,15 @@
                 <h2 style="color: rgb(105, 104, 104);">프로젝트 헤일메리</h2>
                 <h2 class="상세섹션제목">작품 정보</h2>
 
-                <nav class="작품정보탭" aria-label="작품 정보 메뉴" role="tablist">
-                    <button type="button" class="작품정보탭버튼 활성" data-panel="작품소개" role="tab" aria-selected="true" aria-controls="작품소개">작품 소개</button>
-                    <button type="button" class="작품정보탭버튼" data-panel="목차" role="tab" aria-selected="false" aria-controls="목차">목차</button>
-                    <button type="button" class="작품정보탭버튼" data-panel="출판사서평" role="tab" aria-selected="false" aria-controls="출판사서평">출판사 서평</button>
+                <nav class="작품정보탭" aria-label="작품 정보 메뉴">
+                    <button type="button" class="작품정보탭버튼 활성" data-panel="작품소개">작품 소개</button>
+                    <button type="button" class="작품정보탭버튼" data-panel="목차">목차</button>
+                    <button type="button" class="작품정보탭버튼" data-panel="출판사서평">출판사 서평</button>
                 </nav>
 
-                <article id="작품소개" class="작품정보패널 활성" role="tabpanel"></article>
-                <article id="목차" class="작품정보패널" role="tabpanel" hidden></article>
-                <article id="출판사서평" class="작품정보패널" role="tabpanel" hidden></article>
+                <article id="작품소개" class="작품정보패널 활성"></article>
+                <article id="목차" class="작품정보패널" hidden></article>
+                <article id="출판사서평" class="작품정보패널" hidden></article>
 
                 <button type="button" class="작품정보더보기버튼" aria-expanded="false" aria-controls="작품소개">
                     <span class="작품정보더보기문구">더보기</span>
@@ -218,15 +218,15 @@
             <!-- 작가 영역 -->
             <section class="작가정보">
                 <h2 class="상세섹션제목">작가</h2>
-                <nav class="작가탭" aria-label="작가 정보 메뉴" role="tablist">
-                    <button type="button" class="작가정보탭버튼 활성" data-panel="작가프로필" role="tab" aria-selected="true" aria-controls="작가프로필">작가 프로필</button>
-                    <button type="button" class="작가정보탭버튼" data-panel="작가소개" role="tab" aria-selected="false" aria-controls="작가소개">작가 소개</button>
+                <nav class="작가탭" aria-label="작가 정보 메뉴">
+                    <button type="button" class="작가정보탭버튼 활성" data-panel="작가프로필">작가 프로필</button>
+                    <button type="button" class="작가정보탭버튼" data-panel="작가소개">작가 소개</button>
                 </nav>
 
-                <article id="작가프로필" class="작가정보패널 활성" role="tabpanel">
+                <article id="작가프로필" class="작가정보패널 활성">
                     <div class="작가프로필영역"></div>
                 </article>
-                <article id="작가소개" class="작가정보패널 작가소개패널" role="tabpanel" hidden></article>
+                <article id="작가소개" class="작가정보패널 작가소개패널" hidden></article>
 
                 <button type="button" class="작가소개더보기버튼" aria-expanded="false" aria-controls="작가소개" hidden>
                     <span class="작가소개더보기문구">더보기</span>
@@ -245,7 +245,7 @@
                         <strong class="리뷰평점"></strong>
                         <div class="리뷰평점설명">
                             <strong>구매자 별점</strong>
-                            <span class="리뷰요약별점" aria-label="구매자 별점"></span>
+                            <span class="리뷰요약별점"></span>
                         </div>
                     </div>
                     <div class="리뷰평가정보">
@@ -256,7 +256,7 @@
 
                 <div class="리뷰작성영역">
                     <p class="리뷰평가안내">이 작품을 평가해 주세요!</p>
-                    <div class="리뷰별점입력" aria-label="별점 선택">
+                    <div class="리뷰별점입력">
                         <button type="button" data-rating="1" aria-label="1점">★</button>
                         <button type="button" data-rating="2" aria-label="2점">★</button>
                         <button type="button" data-rating="3" aria-label="3점">★</button>
@@ -280,8 +280,8 @@
                 </div>
 
                 <div class="리뷰종류탭" role="tablist" aria-label="리뷰 종류">
-                    <button type="button" class="활성" data-review-type="buyer" role="tab" aria-selected="true">구매자 <strong class="구매자리뷰수"></strong></button>
-                    <button type="button" data-review-type="all" role="tab" aria-selected="false">전체 <strong class="전체리뷰수"></strong></button>
+                    <button type="button" class="활성" data-review-type="buyer">구매자 <strong class="구매자리뷰수"></strong></button>
+                    <button type="button" data-review-type="all">전체 <strong class="전체리뷰수"></strong></button>
                 </div>
 
                 <div class="댓글정렬">
@@ -304,7 +304,7 @@
             <section class="작가대표작품">
                 <div class="상세섹션머리">
                     <h2 class="상세섹션제목">앤디 위어 우주 3부작</h2>
-                    <a href="#">더보기</a>
+                    <a href="index.html">더보기</a>
                 </div>
                 <div class="대표작품목록"></div>
             </section>
@@ -314,7 +314,7 @@
             <section class="연관작품영역">
                 <div class="상세섹션머리">
                     <h2 class="상세섹션제목">함께 구매한 작품</h2>
-                    <a href="#">더보기</a>
+                    <a href="index.html">더보기</a>
                 </div>
                 <div class="연관작품슬라이더">
                     <button type="button" class="연관작품이동버튼 연관작품이전버튼" aria-label="이전 작품 보기" hidden>
@@ -335,7 +335,7 @@
             <div class="푸터상단">
                 <div class="푸터왼쪽메뉴">
                     <div class="푸터바로가기">
-                        <a href="#" class="푸터큰링크">
+                        <a href="index.html" class="푸터큰링크">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M4 13v-2a8 8 0 0 1 16 0v2"/>
                                 <path d="M4 13H3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h2v-7H4Z"/>
@@ -345,7 +345,7 @@
                             <span>고객센터</span>
                         </a>
 
-                        <a href="#" class="푸터큰링크">
+                        <a href="index.html" class="푸터큰링크">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M4 10v4"/>
                                 <path d="M6 9l10-4v14L6 15Z"/>
@@ -358,39 +358,39 @@
 
                     <div class="푸터목록">
                         <strong>서비스</strong>
-                        <a href="#">제휴카드</a>
-                        <a href="#">뷰어 다운로드</a>
-                        <a href="#">CP사이트</a>
-                        <a href="#">리디바탕</a>
+                        <a href="index.html">제휴카드</a>
+                        <a href="index.html">뷰어 다운로드</a>
+                        <a href="index.html">CP사이트</a>
+                        <a href="index.html">리디바탕</a>
                     </div>
 
                     <div class="푸터목록">
                         <strong>기타 문의</strong>
-                        <a href="#">원고 투고</a>
-                        <a href="#">사업 제휴 문의</a>
+                        <a href="index.html">원고 투고</a>
+                        <a href="index.html">사업 제휴 문의</a>
                     </div>
 
                     <div class="푸터목록">
                         <strong>회사</strong>
-                        <a href="#">회사 소개</a>
-                        <a href="#" class="인재채용링크">인재채용 <span class="뉴배지">N</span></a>
+                        <a href="index.html">회사 소개</a>
+                        <a href="index.html" class="인재채용링크">인재채용 <span class="뉴배지">N</span></a>
                     </div>
                 </div>
 
                 <div class="푸터SNS">
-                    <a href="#" aria-label="페이스북" title="페이스북">
+                    <a href="index.html" aria-label="페이스북" title="페이스북">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-1 .5-1 1-1Z"/></svg>
                     </a>
-                    <a href="#" aria-label="인스타그램" title="인스타그램">
+                    <a href="index.html" aria-label="인스타그램" title="인스타그램">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="채움"/></svg>
                     </a>
-                    <a href="#" aria-label="트위터 X" title="트위터 X">
+                    <a href="index.html" aria-label="트위터 X" title="트위터 X">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l14 16M19 4L5 20"/></svg>
                     </a>
-                    <a href="#" aria-label="유튜브" title="유튜브">
+                    <a href="index.html" aria-label="유튜브" title="유튜브">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8c-.2-1.5-1-2.5-2.5-2.8C16.8 5 14.5 5 12 5s-4.8 0-6.5.2C4 5.5 3.2 6.5 3 8c-.2 1.1-.2 2.3-.2 4s0 2.9.2 4c.2 1.5 1 2.5 2.5 2.8C7.2 19 9.5 19 12 19s4.8 0 6.5-.2C20 18.5 20.8 17.5 21 16c.2-1.1.2-2.3.2-4s0-2.9-.2-4Z"/><path d="M10 9l5 3-5 3Z" class="채움"/></svg>
                     </a>
-                    <a href="#" aria-label="틱톡" title="틱톡">
+                    <a href="index.html" aria-label="틱톡" title="틱톡">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.5a4.5 4.5 0 1 1-4-4.5"/><path d="M14 4c1 3 3 4 6 4"/></svg>
                     </a>
                 </div>
@@ -408,10 +408,10 @@
                 </div>
 
                 <div class="푸터약관">
-                    <a href="#">이용약관</a>
-                    <a href="#" class="개인정보처리방침">개인정보 처리방침</a>
-                    <a href="#">청소년보호정책</a>
-                    <a href="#">사업자정보확인</a>
+                    <a href="index.html">이용약관</a>
+                    <a href="index.html" class="개인정보처리방침">개인정보 처리방침</a>
+                    <a href="index.html">청소년보호정책</a>
+                    <a href="index.html">사업자정보확인</a>
                 </div>
 
                 <div class="푸터카피라이트">

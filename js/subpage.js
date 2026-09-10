@@ -318,7 +318,6 @@ function 작품정보탭연결() {
             탭버튼목록.forEach(function (탭버튼) {
                 const 선택됨 = 탭버튼 === 버튼;
                 탭버튼.classList.toggle("활성", 선택됨);
-                탭버튼.setAttribute("aria-selected", String(선택됨));
             });
 
             패널목록.forEach(function (패널) {
@@ -365,7 +364,6 @@ function 작가정보탭연결() {
             탭버튼목록.forEach(function (탭버튼) {
                 const 선택됨 = 탭버튼 === 버튼;
                 탭버튼.classList.toggle("활성", 선택됨);
-                탭버튼.setAttribute("aria-selected", String(선택됨));
             });
 
             패널목록.forEach(function (패널) {
@@ -560,7 +558,6 @@ function 리뷰입력연결() {
             document.querySelectorAll(".리뷰종류탭 button").forEach(function (종류버튼) {
                 const 선택됨 = 종류버튼 === 버튼;
                 종류버튼.classList.toggle("활성", 선택됨);
-                종류버튼.setAttribute("aria-selected", String(선택됨));
             });
         });
     });
